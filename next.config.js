@@ -17,11 +17,6 @@ const nextConfig = {
 };
 module.exports = {
   output: "export",
-  basePath: "https://github.com/kudith/calculus2_project", // Ganti dengan nama repo Anda
-  images: {
-    loader: "akamai",
-    path: "",
-  },
   trailingSlash: true,
 };
 
