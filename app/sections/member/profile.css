@@ -128,6 +128,7 @@
 
 .profile-info {
   position: absolute;
+  border-radius: 0px 0px 1.8rem 1.8rem;
   bottom: 0; /* Letakkan di bagian bawah gambar */
   left: 0; /* Letakkan di kiri gambar */
   width: 100%; /* Ubah lebar untuk mengisi lebar gambar */
