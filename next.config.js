@@ -17,7 +17,6 @@ const nextConfig = {
 };
 module.exports = {
   output: "export",
-  trailingSlash: true,
 };
 
 module.exports = nextConfig;
