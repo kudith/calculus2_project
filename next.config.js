@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -13,6 +14,15 @@ const nextConfig = {
     });
     return config;
   },
+};
+module.exports = {
+  output: "export",
+  basePath: "https://github.com/kudith/calculus2_project", // Ganti dengan nama repo Anda
+  images: {
+    loader: "akamai",
+    path: "",
+  },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
