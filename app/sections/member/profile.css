@@ -1,0 +1,161 @@
+.swiper_container {
+  height: 40rem; /* Atur tinggi card untuk desktop */
+  padding: 2rem 0;
+  position: relative;
+}
+
+.swiper-slide {
+  width: 30rem; /* Atur lebar card untuk desktop */
+  height: 35rem; /* Atur tinggi card untuk desktop */
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  .swiper_container {
+    height: 30rem; /* Atur tinggi card untuk mobile */
+  }
+  .swiper-slide {
+    width: 18rem; /* Atur lebar card untuk mobile */
+    height: 22rem; /* Atur tinggi card untuk mobile */
+  }
+  .swiper-slide img {
+    width: 18rem; /* Atur lebar gambar untuk mobile */
+    height: 22rem; /* Atur tinggi gambar untuk mobile */
+  }
+}
+
+.swiper-slide img {
+  width: 100%; /* Ubah width menjadi 100% untuk mengisi card */
+  height: 100%; /* Ubah height menjadi 100% untuk mengisi card */
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.slider-controler {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-controler .swiper-button-next,
+.slider-controler .swiper-button-prev {
+  left: 50%; /* Atur posisi tombol menjadi tengah */
+  transform: translateX(-50%); /* Translasikan tombol ke tengah */
+}
+
+@media (max-width: 990px) {
+  .slider-controler .swiper-button-next,
+  .slider-controler .swiper-button-prev {
+    left: 60%; /* Atur posisi tombol untuk tablet */
+    transform: translateX(-60%);
+  }
+}
+
+@media (max-width: 500px) {
+  .slider-controler .swiper-button-next,
+  .slider-controler .swiper-button-prev {
+    left: 70%; /* Atur posisi tombol untuk mobile */
+    transform: translateX(-70%);
+  }
+}
+
+.slider-controler .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.slider-controler .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.swiper-pagination {
+  width: 100%; /* Ubah lebar pagination menjadi 100% */
+  display: flex;
+  justify-content: center;
+  bottom: 1rem;
+  position: absolute;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.1));
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: blue-light;
+}
+
+.slider-controler .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.slider-controler .slider-arrow::after {
+  content: "";
+}
+
+/* CSS untuk tombol 'next' dan 'prev' */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #b0b0b0; /* Ubah warna ikon menjadi abu-abu */
+  background-color: transparent; /* Menghapus latar belakang */
+  border: none; /* Menghapus garis batas */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
+}
+
+/* Tambahkan efek hover untuk membuat ikon lebih gelap saat dihover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #808080; /* Mengubah warna ikon menjadi abu-abu gelap saat dihover */
+}
+
+.profile-card {
+  position: relative;
+  width: 100%; /* Ubah lebar card menjadi 100% */
+  height: 100%; /* Ubah tinggi card menjadi 100% */
+  border-radius: 1rem; /* Tambahkan border-radius untuk membuat sudut yang membulat */
+}
+
+.profile-info {
+  position: absolute;
+  bottom: 0; /* Letakkan di bagian bawah gambar */
+  left: 0; /* Letakkan di kiri gambar */
+  width: 100%; /* Ubah lebar untuk mengisi lebar gambar */
+  padding: 0.5rem; /* Atur padding untuk teks */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Tambahkan latar belakang semi-transparan */
+  text-align: center; /* Pusatkan teks */
+}
+
+.profile-name {
+  font-size: 1.2rem; /* Ukuran font untuk nama */
+  margin-bottom: 0.2rem; /* Margin bawah untuk memberi jarak ke jabatan */
+}
+
+.profile-role {
+  font-size: 1rem; /* Ukuran font untuk jabatan */
+}
+
+@media (max-width: 500px) {
+  /* Aturan untuk layar dengan lebar maksimal 500px (perangkat seluler) */
+  .profile-info {
+    top: auto; /* Hapus aturan posisi atas */
+    bottom: 0; /* Atur posisi bawah */
+    width: 100%; /* Lebar penuh gambar */
+    padding: 0.3rem; /* Kurangi padding */
+  }
+}
