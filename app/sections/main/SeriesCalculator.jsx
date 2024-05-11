@@ -49,7 +49,10 @@ export function ArithmeticSeriesCalculator() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="container mx-auto p-0 md:p-4 md:max-w-lg">
+      <div
+        className="container mx-auto px-0 md:p-4 mb-2"
+        style={{ maxWidth: "600px" }}
+      >
         <div className="shadow-lg rounded-lg p-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-blue-light">
             Kalkulator Deret Aritmatika

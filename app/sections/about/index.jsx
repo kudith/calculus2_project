@@ -40,16 +40,15 @@ export function AboutSection() {
             variants={{
               visible: {
                 opacity: 1,
-                x: 0,
+                y: 0,
                 transition: {
-                  duration: 1,
-                  ease: [0.17, 0.55, 0.55, 1],
-                  delay: 0.5,
+                  opacity: { duration: 0.5, ease: "easeOut" }, // Mengatur efek fade
+                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, // Mengatur pergerakan dari bawah ke atas
                 },
               },
               hidden: {
                 opacity: 0,
-                x: -200,
+                y: 50, // Posisi awal dari bawah
               },
             }}
           >
@@ -85,16 +84,15 @@ export function AboutSection() {
             variants={{
               visible: {
                 opacity: 1,
-                x: 0,
+                y: 0,
                 transition: {
-                  duration: 0.8,
-                  ease: [0.17, 0.55, 0.55, 1],
-                  delay: 1,
+                  opacity: { duration: 0.5, ease: "easeOut" },
+                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, // Mengatur pergerakan dari bawah ke atas
                 },
               },
               hidden: {
                 opacity: 0,
-                x: 200,
+                y: 50, // Posisi awal dari bawah
               },
             }}
           >
@@ -117,23 +115,21 @@ export function AboutSection() {
 function HeadingDividerWithAnimation({ controls }) {
   return (
     <motion.div
-      className="flex justify-start items-start mt-2 mb-5"
+      className="flex justify-start items-start mt-2 mb-2"
       initial="hidden"
       animate={controls}
       variants={{
         visible: {
           opacity: 1,
-          scale: 1,
+          x: 0,
           transition: {
-            duration: 0.5,
-            type: "spring",
-            stiffness: 200,
-            damping: 20,
+            opacity: { duration: 0.5, ease: "easeOut" },
+            x: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, // Mengatur pergerakan dari bawah ke atas
           },
         },
         hidden: {
           opacity: 0,
-          scale: 0,
+          x: -50, // Posisi awal dari bawah
         },
       }}
     >

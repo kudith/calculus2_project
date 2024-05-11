@@ -8,24 +8,23 @@ import Tailwind from "/public/assets/skills/tailwind.png";
 import Github from "/public/assets/skills/github1.png";
 import FramerMotion from "/public/assets/skills/framer-motion.png";
 import NextJS from "/public/assets/skills/nextjs.png";
-import { useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export function TechnologiesSection() {
   const textRef = useRef(null);
-  const stackRef = useRef(null);
-
-  const isTextInView = useInView(textRef, { once: true });
-  // const isStackInView = useInView(stackRef, { once: true });
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      setIsVisible(true);
     }
-  }, [controls, inView]);
+  }, [inView]);
 
   return (
     <div id="technologies" className="w-full lg:h-screen p-2">
@@ -36,9 +35,9 @@ export function TechnologiesSection() {
           tabIndex="0"
           className="my-5 text-2xl"
           style={{
-            transform: isTextInView ? "none" : "translateX(-200px)",
-            opacity: isTextInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.5s ease, transform 0.5s ease",
           }}
         >
           <span className="font-semibold">detrix</span>
@@ -55,52 +54,35 @@ export function TechnologiesSection() {
             { src: FramerMotion, label: "Framer Motion" },
             { src: Github, label: "Github" },
             { src: NextJS, label: "NextJS" },
-          ].map((tech) => (
+          ].map((tech, index) => (
             <motion.div
               ref={ref}
+              key={index}
               className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300"
-              initial="hidden"
-              animate={controls}
-              transition={{
-                ease: "linear",
-                duration: 2,
-                x: { duration: 1 },
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{
+                opacity: isVisible ? 1 : 0,
+                scale: isVisible ? 1 : 0.8,
               }}
-              key={tech.label}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeInOut",
+              }}
             >
-              <motion.div
-                ref={ref}
-                className="grid grid-cols-2 gap-4 justify-center items-center"
-                initial="hidden"
-                animate={controls}
-                transition={{
-                  ease: "linear",
-                  duration: 2,
-                  x: { duration: 1 },
-                }}
-              >
-                <motion.div
-                  ref={ref}
-                  className="m-auto"
-                  initial="hidden"
-                  animate={controls}
-                  transition={{ duration: 0.5 }}
-                  variants={{
-                    visible: { opacity: 1, scale: 1 },
-                    hidden: { opacity: 0, scale: 0.8 },
-                  }}
-                >
+              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+                <div className="m-auto">
                   <Image
                     src={tech.src}
                     width="64px"
                     height="64px"
                     alt={tech.label}
                   />
-                </motion.div>
+                </div>
                 <div className="flex flex-col items-center justify-center">
                   <h3>{tech.label}</h3>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </motion.div>

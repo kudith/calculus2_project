@@ -15,18 +15,22 @@ const CalculatorSelector = () => {
   useEffect(() => {
     if (inView) {
       const animationVariants = {
-        hidden: { opacity: 0, scale: 0.8 },
-        visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
       };
 
       setAnimation(animationVariants.visible);
     }
   }, [inView]);
 
-  const [animation, setAnimation] = useState({ opacity: 0, scale: 0.5 });
+  const [animation, setAnimation] = useState({ opacity: 0, y: 20 });
 
   return (
-    <div id="calculator" className="container mx-auto md:p-4" ref={ref}>
+    <div
+      id="calculator"
+      className="container min-h-screen mx-auto md:p-4"
+      ref={ref}
+    >
       <motion.div
         className="shadow-lg rounded-lg md:p-6 p-4"
         initial="hidden"
@@ -44,7 +48,7 @@ const CalculatorSelector = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleCalculatorChange("arithmeticSeries")}
-            transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            transition={{ duration: 0.5 }}
           >
             Deret Aritmatika
           </motion.button>
@@ -57,29 +61,30 @@ const CalculatorSelector = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleCalculatorChange("determinant")}
-            transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            transition={{ duration: 0.5 }}
           >
             Determinan
           </motion.button>
         </div>
 
-        {/* Menggunakan AnimatePresence untuk menangani animasi saat transisi */}
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
           {calculatorType === "arithmeticSeries" ? (
             <motion.div
               key="arithmeticSeries"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0.5, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ type: "spring", stiffness: 100 }}
             >
               <ArithmeticSeriesCalculator />
             </motion.div>
           ) : (
             <motion.div
               key="determinant"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0.5, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ type: "spring", stiffness: 100 }}
             >
               <DeterminantCalculator />
             </motion.div>

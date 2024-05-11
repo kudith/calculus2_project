@@ -128,7 +128,7 @@ export function DeterminantCalculator() {
   return (
     <LazyMotion features={domAnimation}>
       <div
-        className="determinant-calculator mt-6 mx-auto px-4 py-8 rounded-lg shadow-lg"
+        className="determinant-calculator mt-6 mx-auto px-4 py-8 md:mb-10 rounded-lg shadow-lg"
         style={{ maxWidth: "600px" }}
       >
         <h2 className="text-3xl font-bold mb-4 text-center text-blue-light">

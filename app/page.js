@@ -9,7 +9,7 @@ import CalculatorSelector from "./sections/main/calculatorselector";
 import TeamProfile from "./sections/member/profile";
 export default function Page() {
   return (
-    <div className="container-md">
+    <div className="container-md overflow-hidden">
       <WelcomeSection />
       <AboutSection />
       <CalculatorSelector />
