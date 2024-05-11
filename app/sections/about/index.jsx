@@ -1,30 +1,56 @@
-"use client";
-
-import { useRef } from "react";
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { LazyMotion, domAnimation, motion } from "framer-motion";
 import { HeadingDivider } from "components";
 import Image from "next/image";
 
 export function AboutSection() {
-  const ref = useRef(null);
+  const { ref: sectionRef, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+  const controls = useAnimation();
+  const dividerControls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+      dividerControls.start("visible");
+    }
+  }, [controls, dividerControls, inView]);
 
   return (
     <LazyMotion features={domAnimation}>
-      <section id="about" className="section">
-        <HeadingDivider title="About Us" />
+      <section id="about" className="section" ref={sectionRef}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          <HeadingDividerWithAnimation controls={dividerControls} />
+        </motion.div>
         {/* Wrapper div dengan kelas responsif */}
         <div className="pt-10 pb-16 max-w-7xl flex flex-col-reverse md:flex-row gap-10 items-center">
           {/* Bagian kiri untuk teks */}
           <motion.div
-            tabIndex="0"
-            ref={ref}
             className="text-xl font-light leading-relaxed flex-1 order-2 md:order-1"
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.9,
-              ease: [0.17, 0.55, 0.55, 1],
-              delay: 0.5,
+            initial="hidden"
+            animate={controls}
+            variants={{
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 1,
+                  ease: [0.17, 0.55, 0.55, 1],
+                  delay: 0.5,
+                },
+              },
+              hidden: {
+                opacity: 0,
+                x: -200,
+              },
             }}
           >
             <p>
@@ -54,12 +80,22 @@ export function AboutSection() {
           {/* Bagian kanan untuk gambar SVG */}
           <motion.div
             className="flex-1 order-2 md:order-1 w-full h-auto"
-            initial={{ opacity: 0, x: 200 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.9,
-              ease: [0.17, 0.55, 0.55, 1],
-              delay: 0.5,
+            initial="hidden"
+            animate={controls}
+            variants={{
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 0.8,
+                  ease: [0.17, 0.55, 0.55, 1],
+                  delay: 1,
+                },
+              },
+              hidden: {
+                opacity: 0,
+                x: 200,
+              },
             }}
           >
             {/* Komponen Image menggunakan layout responsif */}
@@ -75,5 +111,33 @@ export function AboutSection() {
         </div>
       </section>
     </LazyMotion>
+  );
+}
+
+function HeadingDividerWithAnimation({ controls }) {
+  return (
+    <motion.div
+      className="flex justify-start items-start mt-2 mb-5"
+      initial="hidden"
+      animate={controls}
+      variants={{
+        visible: {
+          opacity: 1,
+          scale: 1,
+          transition: {
+            duration: 0.5,
+            type: "spring",
+            stiffness: 200,
+            damping: 20,
+          },
+        },
+        hidden: {
+          opacity: 0,
+          scale: 0,
+        },
+      }}
+    >
+      <HeadingDivider title="About Us" />
+    </motion.div>
   );
 }

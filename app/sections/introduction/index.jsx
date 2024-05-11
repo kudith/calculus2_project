@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { LazyMotion, domAnimation, motion } from "framer-motion";
@@ -27,6 +25,16 @@ export function WelcomeSection() {
 
     return () => clearInterval(interval);
   }, [texts.length]);
+
+  // Animasi teks bergulir
+  useEffect(() => {
+    if (introRef.current) {
+      introRef.current.scrollTo({
+        top: count * introRef.current.clientHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [count]);
 
   // Variabel animasi
   const textAnimations = {

@@ -8,7 +8,7 @@ import { animate, exit, initial, transition } from "utils";
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, systemTheme } = useTheme({
-    defaultTheme: "system", // Mengatur default theme menjadi 'system'
+    defaultTheme: "system",
   });
 
   const currentTheme = theme === "system" ? systemTheme : theme;

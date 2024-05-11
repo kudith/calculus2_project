@@ -5,42 +5,39 @@ import { Calc2Course } from "./calc2course";
 import { Calculus2Content } from "./calccourse";
 
 export default function Page() {
-  // Inisialisasi state dengan nilai default "Calculus2Content"
   const [selectedContent, setSelectedContent] = useState("Calculus2Content");
 
-  // Fungsi untuk memilih konten
   const handleSelect = (content) => {
     setSelectedContent(content);
   };
 
   return (
     <div className="container mx-auto py-4">
-      {/* Kontainer tombol */}
       <div className="flex m-10 space-x-4 mb-4">
-        {/* Tombol dengan Tailwind CSS */}
-        <button
+        <motion.button
           className={`py-3 px-5 rounded ${
             selectedContent === "Calculus2Content"
               ? "bg-blue-light text-white"
               : "bg-gray-200 text-gray-800"
-          } hover:bg-blue-700 focus:outline-none`}
+          }`}
+          whileHover={{ scale: 1.05 }} // animasi saat tombol dihover
           onClick={() => handleSelect("Calculus2Content")}
         >
           Determinan
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           className={`py-2 px-4 rounded ${
             selectedContent === "Calc2Course"
               ? "bg-blue-light text-white"
               : "bg-gray-200 text-gray-800"
-          } hover:bg-blue-700 focus:outline-none`}
+          }`}
+          whileHover={{ scale: 1.05 }} // animasi saat tombol dihover
           onClick={() => handleSelect("Calc2Course")}
         >
           Barisan dan Deret
-        </button>
+        </motion.button>
       </div>
 
-      {/* Animasi transisi menggunakan AnimatePresence */}
       <AnimatePresence>
         {selectedContent === "Calculus2Content" && (
           <motion.div

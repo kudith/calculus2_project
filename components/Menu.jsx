@@ -14,17 +14,13 @@ export function Menu({ onClick = () => {} }) {
 
   // Fungsi untuk menangani klik pada tautan
   const handleOnClick = (e, url) => {
-    e.preventDefault(); // Mencegah perilaku default tautan
+    e.preventDefault();
 
     if (url) {
-      // Jika URL diberikan, gunakan router.push untuk mengarahkan ke halaman lain
       router.push(url);
-      // Tutup menu setelah pengalihan
       onClick();
     } else {
-      // Jika tidak ada URL, gulir ke bagian tertentu dari halaman
       scrollToEl(e);
-      // Tutup menu setelah pengguliran
       setTimeout(() => onClick(), 350);
     }
   };
@@ -85,8 +81,8 @@ export function Menu({ onClick = () => {} }) {
         </li>
         <li>
           <Link
-            href="/course" // Menentukan href langsung ke /course
-            onClick={(e) => handleOnClick(e, "/course")} // Mengarahkan langsung ke halaman /course
+            href="/course"
+            onClick={(e) => handleOnClick(e, "/course")}
             className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
             Course
@@ -110,7 +106,7 @@ export function Menu({ onClick = () => {} }) {
           <Link
             href="/"
             onClick={(e) => handleOnClick(e, "/")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 setelah:bg-current setelah:transition-width setelah:duration-300 setelah:ease-in-out hover:after:w-full"
+            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
             Home
           </Link>
@@ -119,7 +115,7 @@ export function Menu({ onClick = () => {} }) {
           <Link
             href="/#about"
             onClick={(e) => handleOnClick(e, "/#about")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] setelah:w-0 setelah:bg-current setelah:transition-width setelah:duration-300 setelah:ease-in-out hover:after:w-full"
+            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
             About
           </Link>
@@ -128,7 +124,7 @@ export function Menu({ onClick = () => {} }) {
           <Link
             href="/#calculator"
             onClick={(e) => handleOnClick(e, "/#calculator")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] setelah:h-[2px] setelah:w-0 setelah:bg-current setelah:transition-width setelah:duration-300 setelah:ease-in-out hover:after:w-full"
+            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
             Calculator
           </Link>
@@ -137,7 +133,7 @@ export function Menu({ onClick = () => {} }) {
           <Link
             href="/#team"
             onClick={(e) => handleOnClick(e, "/#team")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 setelah:-bottom-[3px] setelah:h-[2px] setelah:w-0 setelah:bg-current setelah:transition-width setelah:duration-300 setelah:ease-in-out hover:after:w-full"
+            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
             Team
           </Link>
@@ -146,7 +142,7 @@ export function Menu({ onClick = () => {} }) {
           <Link
             href="/course"
             onClick={(e) => handleOnClick(e, "/course")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 setelah:-bottom-[3px] setelah:h-[2px] setelah:w-0 setelah:bg-current setelah:transition-width setelah:duration-300 setelah:ease-in-out hover:after:w-full"
+            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
             Course
           </Link>

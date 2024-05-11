@@ -81,7 +81,7 @@ export function TeamProfile() {
         style={{
           transform: `translateX(${useInView(textRef) ? "0" : "-200px"})`,
           opacity: useInView(textRef) ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          transition: "all 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
         }}
       ></p>
       <Swiper

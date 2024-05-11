@@ -12,7 +12,7 @@ export function Logo() {
   const introRef = useRef(null);
 
   useEffect(() => {
-    // Cek apakah berada di halaman beranda, jika ya, gulir ke #intro
+    // cek kondisi link
     if (pathname === SITE_ROUTES.home || pathname === "/") {
       const introElement = introRef.current;
       if (introElement) {

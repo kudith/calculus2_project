@@ -37,7 +37,7 @@ export function MobileMenu() {
           animate={animate}
           exit={exit}
           transition={transition}
-          className="p-2" // Anda dapat menambahkan gaya lainnya di sini jika diperlukan
+          className="p-2"
         >
           <BsGrid />
         </m.button>

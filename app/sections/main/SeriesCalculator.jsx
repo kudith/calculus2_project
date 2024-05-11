@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 
 export function ArithmeticSeriesCalculator() {

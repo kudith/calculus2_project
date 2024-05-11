@@ -8,15 +8,24 @@ import Tailwind from "/public/assets/skills/tailwind.png";
 import Github from "/public/assets/skills/github1.png";
 import FramerMotion from "/public/assets/skills/framer-motion.png";
 import NextJS from "/public/assets/skills/nextjs.png";
-import { useRef } from "react";
-import { LazyMotion, domAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export function TechnologiesSection() {
   const textRef = useRef(null);
   const stackRef = useRef(null);
 
   const isTextInView = useInView(textRef, { once: true });
-  const isStackInView = useInView(stackRef, { once: true });
+  // const isStackInView = useInView(stackRef, { once: true });
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
   return (
     <div id="technologies" className="w-full lg:h-screen p-2">
@@ -36,7 +45,7 @@ export function TechnologiesSection() {
           <mark className="font-semibold">Calc</mark> team works with the
           following technologies and tools:
         </p>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { src: Html, label: "HTML" },
             { src: Css, label: "CSS" },
@@ -47,26 +56,54 @@ export function TechnologiesSection() {
             { src: Github, label: "Github" },
             { src: NextJS, label: "NextJS" },
           ].map((tech) => (
-            <div
-              key={tech.label}
+            <motion.div
+              ref={ref}
               className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300"
+              initial="hidden"
+              animate={controls}
+              transition={{
+                ease: "linear",
+                duration: 2,
+                x: { duration: 1 },
+              }}
+              key={tech.label}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
-                <div className="m-auto">
+              <motion.div
+                ref={ref}
+                className="grid grid-cols-2 gap-4 justify-center items-center"
+                initial="hidden"
+                animate={controls}
+                transition={{
+                  ease: "linear",
+                  duration: 2,
+                  x: { duration: 1 },
+                }}
+              >
+                <motion.div
+                  ref={ref}
+                  className="m-auto"
+                  initial="hidden"
+                  animate={controls}
+                  transition={{ duration: 0.5 }}
+                  variants={{
+                    visible: { opacity: 1, scale: 1 },
+                    hidden: { opacity: 0, scale: 0.8 },
+                  }}
+                >
                   <Image
                     src={tech.src}
                     width="64px"
                     height="64px"
                     alt={tech.label}
                   />
-                </div>
+                </motion.div>
                 <div className="flex flex-col items-center justify-center">
                   <h3>{tech.label}</h3>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
