@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -46,8 +48,42 @@ const teamProfiles = [
 ];
 
 export function TeamProfile() {
+  const textRef = useRef(null);
+  const stackRef = useRef(null);
+
+  // Animasi untuk kartu profil
+  const cardAnimations = {
+    initial: { opacity: 0, y: 0, scale: 0.9 },
+    animate: { opacity: 1, y: 0, scale: 1 },
+    transition: { duration: 0.9, ease: [0.17, 0.55, 0.55, 1], delay: 1.5 },
+  };
+
   return (
-    <div id="team" className="container">
+    <div id="team" className="container md:mt-32 mt-10">
+      <div className="flex justify-center items-center">
+        <motion.p
+          className="text-5xl mb-16 font-bold"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.9,
+            ease: [0.17, 0.55, 0.55, 1],
+            delay: 0.5,
+          }}
+        >
+          detrix<mark>Calc</mark> Team
+        </motion.p>
+      </div>
+      <p
+        ref={textRef}
+        tabIndex="0"
+        className="my-5 text-2xl"
+        style={{
+          transform: `translateX(${useInView(textRef) ? "0" : "-200px"})`,
+          opacity: useInView(textRef) ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+      ></p>
       <Swiper
         effect="coverflow"
         grabCursor={true}
@@ -70,26 +106,38 @@ export function TeamProfile() {
         className="swiper_container"
       >
         {/* Iterasi melalui profil tim */}
-        {teamProfiles.map((profile, index) => (
-          <SwiperSlide key={index}>
-            {/* Gambar profil */}
-            <div className="profile-card">
-              <Image
-                src={profile.image}
-                alt={`Profile of ${profile.name}`}
-                width={200}
-                height={200}
-                className="profile-image"
-              />
+        {teamProfiles.map((profile, index) => {
+          const profileRef = useRef(null);
+          const inView = useInView(profileRef);
 
-              {/* Informasi anggota tim */}
-              <div className="profile-info">
-                <h3 className="profile-name">{profile.name}</h3>
-                <p className="profile-role">{profile.role}</p>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
+          return (
+            <SwiperSlide key={index}>
+              {/* Tambahkan animasi ke kartu profil */}
+              <motion.div
+                className="profile-card"
+                ref={profileRef}
+                initial="initial"
+                animate={inView ? "animate" : "initial"}
+                variants={cardAnimations}
+              >
+                {/* Gambar profil */}
+                <Image
+                  src={profile.image}
+                  alt={`Profile of ${profile.name}`}
+                  width={200}
+                  height={200}
+                  className="profile-image"
+                />
+
+                {/* Informasi anggota tim */}
+                <div className="profile-info">
+                  <h3 className="profile-name">{profile.name}</h3>
+                  <p className="profile-role">{profile.role}</p>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+          );
+        })}
 
         {/* Tombol navigasi */}
         <div className="swiper-pagination"></div>

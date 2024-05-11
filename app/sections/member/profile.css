@@ -1,12 +1,14 @@
 .swiper_container {
-  height: 40rem; /* Atur tinggi card untuk desktop */
-  padding: 2rem 0;
+  width: 90%;
+  height: 30rem; /* Atur tinggi card untuk desktop */
+  padding: 0rem 0;
   position: relative;
+  margin: auto;
 }
 
 .swiper-slide {
-  width: 30rem; /* Atur lebar card untuk desktop */
-  height: 35rem; /* Atur tinggi card untuk desktop */
+  width: 20rem; /* Atur lebar card untuk desktop */
+  height: 25rem; /* Atur tinggi card untuk desktop */
   position: relative;
 }
 
