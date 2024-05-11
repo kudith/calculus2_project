@@ -1,5 +1,4 @@
 "use client";
-
 import { useTheme } from "next-themes";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { useEffect, useState } from "react";
@@ -8,7 +7,9 @@ import { animate, exit, initial, transition } from "utils";
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, systemTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme({
+    defaultTheme: "system", // Mengatur default theme menjadi 'system'
+  });
 
   const currentTheme = theme === "system" ? systemTheme : theme;
 

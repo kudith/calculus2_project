@@ -135,7 +135,7 @@ export function DeterminantCalculator() {
           Kalkulator Determinan
         </h2>
 
-        <div className="input-section mb-4">
+        <div className="input-section mb-4 px-10 text-center">
           <label
             htmlFor="matrix-size"
             className="block mb-2 text-lg font-semibold text-center"
@@ -146,7 +146,7 @@ export function DeterminantCalculator() {
             id="matrix-size"
             value={matrixSize}
             onChange={handleSizeChange}
-            className="p-2 text-center border rounded-lg w-full"
+            className="p-2 text-center border rounded-lg w-48"
           >
             <option value={2}>2x2</option>
             <option value={3}>3x3</option>
@@ -167,10 +167,7 @@ export function DeterminantCalculator() {
                   onChange={(e) =>
                     handleMatrixChange(rowIndex, colIndex, e.target.value)
                   }
-                  className="matrix-cell p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-light text-center"
-                  style={{
-                    width: "100px",
-                  }}
+                  className="matrix-cell md:w-28 w-20 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-light text-center"
                 />
               ))}
             </div>
@@ -180,11 +177,7 @@ export function DeterminantCalculator() {
         <div className="action-section mt-6 text-center">
           <button
             onClick={handleCalculate}
-            className="btn bg-blue-light px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
-            style={{
-              width: "auto", // Ukuran tombol disesuaikan dengan konten
-              padding: "8px 12px", // Padding yang sesuai
-            }}
+            className="btn bg-blue-light px-8 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
           >
             Hitung
           </button>
@@ -222,7 +215,9 @@ export function DeterminantCalculator() {
 
         <div className="history-section mt-6">
           <div className="flex flex-wrap justify-between items-center mb-6 space-x-2">
-            <h3 className="text-xl font-bold text-blue-light">Riwayat:</h3>
+            <h3 className="text-xl mb-4 md:mb-0 font-bold text-blue-light">
+              Riwayat:
+            </h3>
             <div className="flex space-x-2">
               <button
                 onClick={handleToggleHistory}

@@ -62,7 +62,7 @@ export function TeamProfile() {
     <div id="team" className="container md:mt-32 mt-10">
       <div className="flex justify-center items-center">
         <motion.p
-          className="text-5xl mb-16 font-bold"
+          className="text-5xl mb-12 font-bold"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{

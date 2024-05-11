@@ -12,7 +12,7 @@ const CalculatorSelector = () => {
   };
 
   return (
-    <div id="calculator" className="container mx-auto p-4">
+    <div id="calculator" className="container mx-auto md:p-4">
       <div className="shadow-lg rounded-lg md:p-6 p-4">
         <h2 className="text-2xl font-bold mb-4">Pilih Kalkulator</h2>
 

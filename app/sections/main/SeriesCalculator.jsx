@@ -49,15 +49,15 @@ export function ArithmeticSeriesCalculator() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="container mx-auto p-4 md:max-w-lg">
+      <div className="container mx-auto p-0 md:p-4 md:max-w-lg">
         <div className="shadow-lg rounded-lg p-6">
-          <h2 className="text-3xl font-bold mb-4 text-center text-blue-light">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-blue-light">
             Kalkulator Deret Aritmatika
           </h2>
 
           {/* Input Section */}
           <div className="input-section mb-4">
-            <div className="mb-4">
+            <div className="mb-4 text-center">
               <label
                 htmlFor="firstTerm"
                 className="block text-lg font-semibold text-center"
@@ -67,13 +67,13 @@ export function ArithmeticSeriesCalculator() {
               <input
                 type="number"
                 id="firstTerm"
-                className="w-full px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
+                className="md:w-56 w-20 px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
                 value={firstTerm}
                 onChange={(e) => setFirstTerm(e.target.value)}
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-4 text-center">
               <label
                 htmlFor="commonDifference"
                 className="block text-lg font-semibold text-center"
@@ -83,13 +83,13 @@ export function ArithmeticSeriesCalculator() {
               <input
                 type="number"
                 id="commonDifference"
-                className="w-full px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
+                className="md:w-56 w-20 px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
                 value={commonDifference}
                 onChange={(e) => setCommonDifference(e.target.value)}
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-4 text-center">
               <label
                 htmlFor="termNumber"
                 className="block text-lg font-semibold text-center"
@@ -99,7 +99,7 @@ export function ArithmeticSeriesCalculator() {
               <input
                 type="number"
                 id="termNumber"
-                className="w-full px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
+                className="md:w-56 w-20 px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
                 value={termNumber}
                 onChange={(e) => setTermNumber(e.target.value)}
               />
@@ -107,10 +107,10 @@ export function ArithmeticSeriesCalculator() {
           </div>
 
           {/* Button Section */}
-          <div className="action-section text-center">
+          <div className="action-section text-center mt-10 md:mt-6">
             <button
               onClick={handleCalculate}
-              className="btn bg-blue-light px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+              className="btn bg-blue-light px-8 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
             >
               Hitung
             </button>
