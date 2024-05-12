@@ -6,11 +6,11 @@ detrixCalc is a project for the Calculus 2 course assignment. This website provi
 detrixCalc was created as a project for the Calculus 2 course assignment. The main goal of this project is to provide users with an easy-to-use online tool for calculating matrix determinants, sum of arithmetic series, as well as learning and understanding Calculus 2 concepts with the provided materials.
 
 ## detrixCalc Development Team
-- **Lead Developer**: [Ginanjar Aditiya Prianata] - [email]
-- **Developer**: [Dimas Setiawan] - [email]
-- **UI/UX Design**: [Dhiya Ulhaq Prima Yuga] - [email]
-- **Content Writer**: [Sekar Ayu Fatmasari] - [email]
-- **Content Writer**: [Amelia Andini] - [email]
+- **Lead Developer**: [Ginanjar Aditiya Prianata]
+- **Developer**: [Dimas Setiawan]
+- **UI/UX Design**: [Dhiya Ulhaq Prima Yuga]
+- **Content Writer**: [Sekar Ayu Fatmasari]
+- **Content Writer**: [Amelia Andini]
 
 ## Key Features
 ### Determinant Calculator
