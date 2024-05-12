@@ -21,7 +21,7 @@ detrixCalc was created as a project for the Calculus 2 course assignment. The ma
 - Allows users to calculate the sum of arithmetic or geometric series.
 - Users can specify the first term, common difference/ratio, and the number of terms to be calculated.
 
-### Calculus 2 Materials
+### Calculus 2 Course
 - Contains Calculus 2 materials covering topics such as double integrals, differential equations, and more.
 - Materials are presented in an easy-to-understand format with accompanying example problems.
 
@@ -36,10 +36,10 @@ detrixCalc was created as a project for the Calculus 2 course assignment. The ma
 
 ## detrixCalc Development
 
-- [x] Determinant calculator
-- [x] Arithmetic series calculator
-- [ ] Geometric series calculator
-- [ ] Calculus 2 materials
+- [x] Determinant Calculator
+- [x] Arithmetic Series calculator
+- [ ] Geometric Series calculator
+- [ ] Calculus 2 Course
     - [x] Determinant
     - [x] Arithmetic and geometric series
     - [ ] Complex Number
