@@ -1,36 +1,56 @@
-## Getting Started
+# detrixCalc
 
-### Steps to run the project
+detrixCalc is a project for the Calculus 2 course assignment. This website provides content or features such as determinant calculator, series calculator, Calculus 2 materials, and a simple quiz. The website is built using Next.js, Tailwind CSS, and Framer Motion technologies.
 
-- Install dependencies:
+## About the Project
+detrixCalc was created as a project for the Calculus 2 course assignment. The main goal of this project is to provide users with an easy-to-use online tool for calculating matrix determinants, sum of arithmetic series, as well as learning and understanding Calculus 2 concepts with the provided materials.
 
-```bash
-npm install
-# or
-yarn
-```
+## detrixCalc Development Team
+- **Lead Developer**: [Ginanjar Aditiya Prianata] - [email]
+- **Developer**: [Dimas Setiawan] - [email]
+- **UI/UX Design**: [Dhiya Ulhaq Prima Yuga] - [email]
+- **Content Writer**: [Sekar Ayu Fatmasari] - [email]
+- **Content Writer**: [Amelia Andini] - [email]
 
-- **`!!! Make sure to have installed Sanity globally`**
-Check sanity docs for more info: https://www.sanity.io/docs/getting-started-with-sanity-cli
+## Key Features
+### Determinant Calculator
+- Allows users to easily calculate matrix determinants.
+- Support for 2x2 and 3x3 matrices.
+
+### Series Calculator
+- Allows users to calculate the sum of arithmetic or geometric series.
+- Users can specify the first term, common difference/ratio, and the number of terms to be calculated.
+
+### Calculus 2 Materials
+- Contains Calculus 2 materials covering topics such as double integrals, differential equations, and more.
+- Materials are presented in an easy-to-understand format with accompanying example problems.
+
+### Quiz
+- Features a simple quiz to test users' understanding of Calculus 2 materials.
+- Users can view their quiz results.
+
+## Technologies Used
+- **Next.js**: React framework for building web applications with SSR (Server-Side Rendering) and SSG (Static Site Generation).
+- **Tailwind CSS**: Utility-first CSS framework for responsive and customizable web design.
+- **Framer Motion**: Animation library for React enabling the creation of interactive and seamless animations.
+
+## detrixCalc Development
+
+- [x] Determinant calculator
+- [x] Arithmetic series calculator
+- [ ] Geometric series calculator
+- [ ] Calculus 2 materials
+    - [x] Determinant
+    - [x] Arithmetic and geometric series
+    - [ ] Complex Number
+    - [ ] etc.
+- [ ] Develop a simple quiz
 
 
-- Create a file `.env.local` and put inside:
-
-1. NEXT_PUBLIC_SANITY_URL=""
-2. NEXT_PUBLIC_SANITY_LATEST_PROJECTS=""
-3. NEXT_PUBLIC_SANITY_ALL_PROJECTS=""
-4. NEXT_PUBLIC_SANITY_PROJECTS=""
-5. NEXT_PUBLIC_SANITY_PROJECT_BY_CATEGORY=""
-6. NEXT_PUBLIC_SANITY_TOKEN=""
-
-!!! Please, take into account that you need to create a token in Sanity Studio, and put it in NEXT_PUBLIC_SANITY_TOKEN.
-
-Also, the points from 2 to 5 are queries to get data from Sanity. It's up to you to create them. Otherwise, you can use your own queries.
-
-- Finally, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
+## How to Use
+1. Make sure you have Node.js and npm installed.
+2. Clone this repository into your local directory.
+3. Open the terminal and navigate to the project directory.
+4. Run the command `npm install` or `npm install --legacy-peer-deps` to install all dependencies.
+5. Run the command `npm run dev` to run in development mode.
+6. Open a browser and access `http://localhost:3000` to view the application.
