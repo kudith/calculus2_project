@@ -21,7 +21,7 @@ export function WelcomeSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => (prev + 1) % texts.length);
-    }, 2000);
+    }, 2000); // Ubah interval menjadi 5 detik
 
     return () => clearInterval(interval);
   }, [texts.length]);
@@ -38,9 +38,10 @@ export function WelcomeSection() {
 
   // Variabel animasi
   const textAnimations = {
-    initial: { opacity: 0, translateY: -10 },
+    initial: { opacity: 0, translateY: -20 },
     animate: { opacity: 1, translateY: 0 },
-    transition: { duration: 0.9, ease: [0.17, 0.55, 0.55, 1], delay: 0.5 },
+    exit: { opacity: 0, translateY: 20 },
+    transition: { duration: 0.5, ease: "easeInOut" },
   };
 
   return (
@@ -79,21 +80,21 @@ export function WelcomeSection() {
             <motion.span
               style={{
                 top: `${-count * 100}%`,
-                transition: "top 0.5s ease-in-out ease-in-expo",
-                lineHeight: "2rem",
+                transition: "top 0.8s ease-in-out",
+                lineHeight: "1rem",
                 whiteSpace: "pre-wrap",
               }}
               className="absolute flex flex-col"
             >
               {texts.map((text, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="h-16 w-full flex justify-center items-center text-center md:text-2xl"
+                  className="h-16 w-full flex justify-center items-center text-xl text-center md:text-2xl"
                   style={{ padding: "0 1rem" }}
                 >
-                  <b>{text.split(" ")[0]}</b>{" "}
+                  <b>{text.split(" ")[0]} </b>{" "}
                   {text.split(" ").slice(1).join(" ")}
-                </div>
+                </motion.div>
               ))}
             </motion.span>
           </div>
@@ -101,7 +102,7 @@ export function WelcomeSection() {
 
         {/* Deskripsi dan tombol untuk kalkulator */}
         <motion.p
-          className="mt-3 mb-10 text-gray-500 text-md text-center max-w-lg"
+          className="mt-1 mb-10 text-gray-500 md:text-lg text-sm text-center max-w-lg"
           {...textAnimations}
         >
           Explore our learning resources and start using our determinant
