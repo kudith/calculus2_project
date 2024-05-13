@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { useMediaQuery } from "utils";
+import { calculateDeterminant } from "./determinantUtils";
 
 export function DeterminantCalculator() {
   const [matrixSize, setMatrixSize] = useState(2);
@@ -35,55 +36,6 @@ export function DeterminantCalculator() {
     setResult(null);
     setCalculationSteps([]);
     setInputError(null);
-  };
-
-  const calculateDeterminant = (matriks) => {
-    const size = matriks.length;
-    const steps = [];
-
-    if (size === 2) {
-      const det = matriks[0][0] * matriks[1][1] - matriks[0][1] * matriks[1][0];
-      steps.push(
-        `Det = (${matriks[0][0]} * ${matriks[1][1]}) - (${matriks[0][1]} * ${matriks[1][0]})`
-      );
-      steps.push(
-        `Det = ${matriks[0][0] * matriks[1][1]} - ${
-          matriks[0][1] * matriks[1][0]
-        }`
-      );
-      steps.push(`Det = ${det}`);
-      return { det, steps };
-    }
-
-    if (size === 3) {
-      const det =
-        matriks[0][0] *
-          (matriks[1][1] * matriks[2][2] - matriks[1][2] * matriks[2][1]) -
-        matriks[0][1] *
-          (matriks[1][0] * matriks[2][2] - matriks[1][2] * matriks[2][0]) +
-        matriks[0][2] *
-          (matriks[1][0] * matriks[2][1] - matriks[1][1] * matriks[2][0]);
-      steps.push(
-        `Det = (${matriks[0][0]} * (${matriks[1][1]} * ${matriks[2][2]} - ${matriks[1][2]} * ${matriks[2][1]}))` +
-          ` - (${matriks[0][1]} * (${matriks[1][0]} * ${matriks[2][2]} - ${matriks[1][2]} * ${matriks[2][0]}))` +
-          ` + (${matriks[0][2]} * (${matriks[1][0]} * ${matriks[2][1]} - ${matriks[1][1]} * ${matriks[2][0]}))`
-      );
-      steps.push(
-        `Det = (${matriks[0][0]} * ${matriks[1][1] * matriks[2][2]} - ${
-          matriks[1][2] * matriks[2][1]
-        })` +
-          ` - (${matriks[0][1]} * ${matriks[1][0] * matriks[2][2]} - ${
-            matriks[1][2] * matriks[2][0]
-          })` +
-          ` + (${matriks[0][2]} * ${matriks[1][0] * matriks[2][1]} - ${
-            matriks[1][1] * matriks[2][0]
-          })`
-      );
-      steps.push(`Det = ${det}`);
-      return { det, steps };
-    }
-
-    throw new Error("Ukuran matriks tidak valid.");
   };
 
   const handleCalculate = () => {

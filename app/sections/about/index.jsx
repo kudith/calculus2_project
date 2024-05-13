@@ -42,37 +42,31 @@ export function AboutSection() {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  opacity: { duration: 0.5, ease: "easeOut" }, // Mengatur efek fade
-                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, // Mengatur pergerakan dari bawah ke atas
+                  opacity: { duration: 0.5, ease: "easeOut" },
+                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] },
                 },
               },
               hidden: {
                 opacity: 0,
-                y: 50, // Posisi awal dari bawah
+                y: 50,
               },
             }}
           >
             <p>
-              Welcome to CalcSphere, your trusted resource for all things
-              calculus. Our goal is to provide you with a comprehensive platform
-              to master calculus concepts, from calculating determinants to
-              solving complex problems.
-            </p>
-            <p>
-              Our team of experienced mathematicians and developers is dedicated
-              to creating an engaging learning experience for you. Whether
-              you're a student, educator, or enthusiast, we have curated
-              resources and interactive tools to support your journey.
-            </p>
-            <p>
-              With CalcSphere, you'll have access to interactive exercises,
-              detailed explanations, and practice problems that will help you
-              strengthen your understanding of calculus concepts.
-            </p>
-            <p className="my-3.5">
-              Our mission is to make learning calculus accessible and enjoyable
-              for everyone. We believe in continuous improvement, so feel free
-              to reach out with any feedback or suggestions!
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              gravida purus a ex facilisis, id lacinia ligula blandit. Cras
+              imperdiet tristique diam, vel rhoncus tellus. Cras non commodo
+              ipsum. Sed ac ultrices leo. Suspendisse vestibulum enim nec purus
+              porttitor pellentesque eu rhoncus nulla. Sed volutpat efficitur
+              nibh eu aliquam. Sed facilisis blandit dui quis porta. Suspendisse
+              semper sodales eleifend. Sed sollicitudin sem a eros venenatis
+              porttitor. Duis maximus eros vitae est ultricies, at finibus diam
+              placerat. Curabitur molestie risus non lectus blandit, vitae
+              aliquet ex blandit. Aliquam diam urna, malesuada eget nisl eu,
+              molestie facilisis magna. Curabitur tellus nisi, elementum quis
+              dolor ut, cursus tincidunt nunc. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia curae; Sed
+              interdum lacus nec ornare dictum. Etiam sed molestie urna.
             </p>
           </motion.div>
 
@@ -87,22 +81,22 @@ export function AboutSection() {
                 y: 0,
                 transition: {
                   opacity: { duration: 0.5, ease: "easeOut" },
-                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, // Mengatur pergerakan dari bawah ke atas
+                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] },
                 },
               },
               hidden: {
                 opacity: 0,
-                y: 50, // Posisi awal dari bawah
+                y: 50,
               },
             }}
           >
-            {/* Komponen Image menggunakan layout responsif */}
+            {/* Komponen Image  */}
             <Image
               src={"/assets/calculus2.svg"}
               alt="Calculus illustration"
               width={500}
               height={500}
-              className="w-full h-auto" // gunakan className untuk mengatur ukuran
+              className="w-full h-auto"
               priority
             />
           </motion.div>

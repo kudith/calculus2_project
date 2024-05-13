@@ -13,11 +13,11 @@ import "swiper/css/navigation";
 import "./profile.css";
 
 // Import gambar profil tim dan data
-import slide_image_1 from "/public/assets/images/img_1.jpg";
-import slide_image_2 from "/public/assets/images/img_2.jpg";
-import slide_image_3 from "/public/assets/images/img_3.jpg";
-import slide_image_4 from "/public/assets/images/img_4.jpg";
-import slide_image_5 from "/public/assets/images/img_5.jpg";
+import slide_image_1 from "/public/assets/images/abstract-background_136558-34952.jpg";
+import slide_image_2 from "/public/assets/images/abstract-background_136558-34952.jpg";
+import slide_image_3 from "/public/assets/images/abstract-background_136558-34952.jpg";
+import slide_image_4 from "/public/assets/images/abstract-background_136558-34952.jpg";
+import slide_image_5 from "/public/assets/images/abstract-background_136558-34952.jpg";
 
 const teamProfiles = [
   {

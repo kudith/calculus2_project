@@ -10,8 +10,11 @@
 		"format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
 	},
 	"dependencies": {
+		"@material-ui/core": "^4.12.4",
 		"@netlify/plugin-nextjs": "^5.2.2",
 		"framer-motion": "^8.5.5",
+		"material-ui": "^0.20.2",
+		"mathjs": "^12.4.2",
 		"next": "^14.2.3",
 		"next-i18next": "^15.3.0",
 		"next-themes": "^0.2.1",
