@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@netlify/plugin-nextjs": "^5.2.2",
 		"framer-motion": "^8.5.5",
+		"katex": "^0.16.10",
 		"next": "^14.2.3",
 		"next-i18next": "^15.3.0",
 		"next-themes": "^0.2.1",

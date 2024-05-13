@@ -1,6 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import katex from 'katex';
 import { quiz } from "./data.js";
+
+
 
 const QuizComponent = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
