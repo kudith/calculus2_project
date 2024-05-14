@@ -6,6 +6,7 @@ import { LazyMotion, domAnimation, m } from "framer-motion";
 import { initial, animate, exit, transition } from "utils/motions";
 import { SITE_ROUTES } from "../constants";
 import { useScrollTo } from "hooks";
+import LogoSVG from "../public/assets/svg/x-square.svg";  // Adjust the import path accordingly
 
 export function Logo() {
   const pathname = usePathname();
@@ -36,7 +37,7 @@ export function Logo() {
   return (
     <LazyMotion features={domAnimation}>
       <m.h3
-        className="text-xl md:text-2xl font-bold"
+        className="text-xl md:text-2xl font-bold flex items-center"
         initial={initial}
         animate={animate}
         exit={exit}
@@ -47,7 +48,9 @@ export function Logo() {
             href={SITE_ROUTES.home}
             aria-label="Go to home page"
             role="link"
+            className="flex items-center"
           >
+            <LogoSVG className="max-w-full mt-1 h-fit mr-1" />
             <span>detrix</span>
             <mark>Calc</mark>
           </Link>
@@ -57,7 +60,9 @@ export function Logo() {
             onClick={onClick}
             aria-label="Scroll to top"
             role="link"
+            className="flex items-center"
           >
+            <LogoSVG className="max-w-full h-full mt-1 mr-1" />
             <span>detrix</span>
             <mark>Calc</mark>
           </Link>

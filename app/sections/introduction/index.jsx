@@ -21,7 +21,7 @@ export function WelcomeSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => (prev + 1) % texts.length);
-    }, 2000); // Ubah interval menjadi 5 detik
+    }, 2000); 
 
     return () => clearInterval(interval);
   }, [texts.length]);
@@ -53,7 +53,7 @@ export function WelcomeSection() {
       >
         {/* Judul dengan efek animasi */}
         <motion.h1
-          className="text-3xl md:text-5xl xl:text-6xl font-bold text-center max-w-5xl"
+          className="text-3xl md:text-5xl xl:text-6xl font-bold text-center max-w-6xl"
           {...textAnimations}
         >
           Welcome to{" "}
@@ -89,7 +89,7 @@ export function WelcomeSection() {
               {texts.map((text, index) => (
                 <motion.div
                   key={index}
-                  className="h-16 w-full flex justify-center items-center text-xl text-center md:text-2xl"
+                  className="h-16 w-full flex justify-center items-center text-xl text-center md:text-2xl max-w-6xl"
                   style={{ padding: "0 1rem" }}
                 >
                   <b>{text.split(" ")[0]} </b>{" "}

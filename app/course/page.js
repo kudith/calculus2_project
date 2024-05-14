@@ -12,7 +12,7 @@ export default function Page() {
   };
 
   return (
-    <div className="container mx-auto py-4">
+    <div className="container md:container-md mx-auto py-4">
       <div className="flex m-10 space-x-4 mb-4">
         <motion.button
           className={`py-3 px-5 rounded ${
