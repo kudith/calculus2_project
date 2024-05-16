@@ -1,67 +1,64 @@
-"use client";
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Calc2Course } from "./calc2course";
-import { Calculus2Content } from "./calccourse";
+"use client"
+import Link from "next/link";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import determinantImage from "/public/assets/calculus_course/determinant.jpg";
+import seriesArithmeticImage from "/public/assets/calculus_course/series-aritmethic.jpg";
+import complexNumberImage from "/public/assets/calculus_course/complex-numbers.jpg";
+
+const contentList = [
+  {
+    id: "determinant",
+    title: "Determinan",
+    route: "/course/determinant",
+    description: "Pelajari konsep dasar dan aplikasi dari determinan dalam matematika.",
+    image: determinantImage
+  },
+  {
+    id: "series-arithmetic",
+    title: "Barisan dan Deret",
+    route: "/course/series-arithmetic",
+    description: "Telusuri pola-pola dalam barisan dan deret.",
+    image: seriesArithmeticImage
+  },
+  {
+    id: "complex-numbers",
+    title: "Bilangan Kompleks",
+    route: "/course/complex-numbers",
+    description: "Pahami sifat-sifat unik dari bilangan kompleks dan operasi-operasinya.",
+    image: complexNumberImage
+  }
+];
 
 export default function Page() {
-  const [selectedContent, setSelectedContent] = useState("Calculus2Content");
-
-  const handleSelect = (content) => {
-    setSelectedContent(content);
-  };
-
   return (
-    <div className="container md:container-md mx-auto py-4">
-      <div className="flex m-10 space-x-4 mb-4">
-        <motion.button
-          className={`py-3 px-5 rounded ${
-            selectedContent === "Calculus2Content"
-              ? "bg-blue-light text-white"
-              : "bg-gray-200 text-gray-800"
-          }`}
-          whileHover={{ scale: 1.05 }} // animasi saat tombol dihover
-          onClick={() => handleSelect("Calculus2Content")}
-        >
-          Determinan
-        </motion.button>
-        <motion.button
-          className={`py-2 px-4 rounded ${
-            selectedContent === "Calc2Course"
-              ? "bg-blue-light text-white"
-              : "bg-gray-200 text-gray-800"
-          }`}
-          whileHover={{ scale: 1.05 }} // animasi saat tombol dihover
-          onClick={() => handleSelect("Calc2Course")}
-        >
-          Barisan dan Deret
-        </motion.button>
+    <div className="container-md min-h-screen items-center flex mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {contentList.map((content) => (
+          <Link key={content.id} href={content.route}>
+            <motion.div
+              className="rounded-xl overflow-hidden shadow-xl hover:shadow-lg cursor-pointer"
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="relative h-48 md:h-56">
+                <div className="h-full">
+                  <Image
+                    className="absolute object-cover"
+                    src={content.image}
+                    alt={content.title}
+                    layout="fill"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 ">{content.title}</h3>
+                <p className="text-sm md:text-base mb-4">{content.description}</p>
+                <p className="text-blue-500 font-semibold">Klik untuk memulai</p>
+              </div>
+            </motion.div>
+          </Link>
+        ))}
       </div>
-
-      <AnimatePresence>
-        {selectedContent === "Calculus2Content" && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            key="Calculus2Content"
-          >
-            <Calculus2Content />
-          </motion.div>
-        )}
-        {selectedContent === "Calc2Course" && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            key="Calc2Course"
-          >
-            <Calc2Course />
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

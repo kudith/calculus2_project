@@ -3,7 +3,7 @@
 import { motion, LazyMotion, domAnimation } from "framer-motion";
 import Image from "next/image";
 
-export function Calculus2Content() {
+export function DeterminantContent() {
   return (
     <LazyMotion features={domAnimation}>
       <motion.div

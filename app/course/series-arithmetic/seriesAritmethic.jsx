@@ -2,7 +2,7 @@
 
 import { motion, LazyMotion, domAnimation } from "framer-motion";
 
-export function Calc2Course() {
+export function SeriesAritmethicContent() {
   // Efek animasi untuk teks
   const textVariants = {
     hidden: { opacity: 0, y: -10 },
@@ -219,4 +219,4 @@ export function Calc2Course() {
   );
 }
 
-export default Calc2Course;
+export default SeriesAritmethicContent;
