@@ -1,9 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import katex from 'katex';
+import React, { useState, useEffect } from "react";
+import katex from "katex";
 import { quiz } from "./data.js";
-
-
+import "katex/dist/katex.min.css"; // Pastikan untuk mengimpor CSS KaTeX
 
 const QuizComponent = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
@@ -20,7 +19,15 @@ const QuizComponent = () => {
   const { questions } = quiz;
   const { question, answers, correctAnswer } = questions[activeQuestion];
 
-  //   Select and check answer
+  // Render KaTeX after each render
+  useEffect(() => {
+    const questionElement = document.getElementById("question");
+    if (questionElement) {
+      katex.render(question, questionElement);
+    }
+  }, [question]);
+
+  // Select and check answer
   const onAnswerSelected = (answer, idx) => {
     setChecked(true);
     setSelectedAnswerIndex(idx);
@@ -71,8 +78,11 @@ const QuizComponent = () => {
         <div>
           {!showResult ? (
             <div className="quiz-container">
-              <h3 className="text-xl font-semibold mb-6 text-purple-900">
-                {questions[activeQuestion].question}
+              <h3
+                id="question"
+                className="text-xl font-semibold mb-6 text-purple-900"
+              >
+                {question}
               </h3>
               {answers.map((answer, idx) => (
                 <button
