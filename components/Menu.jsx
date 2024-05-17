@@ -18,8 +18,13 @@ export function Menu({ onClick = () => {} }) {
       router.push(url);
       onClick();
     } else {
-      scrollToEl(e);
-      setTimeout(() => onClick(), 350);
+      if (pathname.startsWith('/quiz')) {
+        router.push("/");
+        onClick();
+      } else {
+        scrollToEl(e);
+        setTimeout(() => onClick(), 350);
+      }
     }
   };
 
@@ -46,7 +51,7 @@ export function Menu({ onClick = () => {} }) {
           </Link>
         </li>
         <li>
-        <Link
+          <Link
             href={isCoursePage ? "/" : "#about"}
             onClick={(e) =>
               handleOnClick(e, isCoursePage ? "/#about" : null) 
@@ -57,7 +62,7 @@ export function Menu({ onClick = () => {} }) {
           </Link>
         </li>
         <li>
-        <Link
+          <Link
             href={isCoursePage ? "/" : "#calculator"}
             onClick={(e) =>
               handleOnClick(e, isCoursePage ? "/#calculator" : null) 
@@ -68,7 +73,7 @@ export function Menu({ onClick = () => {} }) {
           </Link>
         </li>
         <li>
-        <Link
+          <Link
             href={isCoursePage ? "/" : "#team"}
             onClick={(e) =>
               handleOnClick(e, isCoursePage ? "/#team" : null) 
@@ -81,7 +86,7 @@ export function Menu({ onClick = () => {} }) {
         <li>
           <div className="relative group text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full">
             <span className="text-xl cursor-pointer" onClick={(e) => handleOnClick(e, "/course")}>Course</span>
-            <ul className="absolute hidden group-hover:block  shadow-xl py-2 px-4 rounded-md w-32 z-10">
+            <ul className="absolute hidden group-hover:block shadow-xl py-2 px-4 rounded-md w-32 z-10">
               <li>
                 <Link
                   href="/course/determinant"
@@ -113,6 +118,15 @@ export function Menu({ onClick = () => {} }) {
               </li>
             </ul>
           </div>
+        </li>
+        <li>
+          <Link
+            href="/quiz"
+            onClick={(e) => handleOnClick(e, "/quiz")}
+            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
+          >
+            Quiz
+          </Link>
         </li>
       </ul>
     </m.nav>

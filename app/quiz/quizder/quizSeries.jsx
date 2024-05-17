@@ -4,6 +4,7 @@ import katex from "katex";
 import { quiz } from "./data.js";
 import "katex/dist/katex.min.css";
 import "./quiz.css"; 
+import { motion } from 'framer-motion';
 
 const QuizComponent = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
@@ -90,7 +91,12 @@ const QuizComponent = () => {
   }, [activeQuestion, selectedAnswers]);
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <motion.div 
+    className="min-h-screen flex justify-center items-center"
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -50 }}
+    transition={{ duration: 0.5, type: "spring", stiffness: 120 }}>
       <div className="w-full sm:max-w-xl mx-4 p-6 rounded-lg shadow-2xl">
         <h1 className="text-3xl font-bold mb-8 text-center text-blue-light">
           Quiz Page
@@ -127,13 +133,13 @@ const QuizComponent = () => {
               </p>
               <button
                 onClick={startReview}
-                className="mt-8 w-full py-2 px-4  text-white font-semibold bg-blue-light rounded-lg hover:bg-blue-950"
+                className="mt-8 w-full py-2 px-4 bg-blue-light  font-semibold rounded-lg hover:bg-blue-900"
               >
                 Review
               </button>
               <button
                 onClick={() => window.location.reload()}
-                className="mt-4 w-full py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700"
+                className="mt-4 w-full py-2 px-4 bg-gray-600  font-semibold rounded-lg hover:bg-gray-700"
               >
                 Restart
               </button>
@@ -152,8 +158,8 @@ const QuizComponent = () => {
                   className={`block w-full py-2 px-4 mb-4 rounded-lg ${
                     selectedAnswers[activeQuestion] === idx
                       ? answers[selectedAnswers[activeQuestion]] === correctAnswer
-                        ? "bg-green-600 text-white"
-                        : "bg-red-600 text-white"
+                        ? "bg-green-600"
+                        : "bg-red-600"
                       : "shadow-lg bg-brand-dark dark:bg-badge-light text-brand-light dark:text-brand-dark"
                   }`}
                   disabled
@@ -169,7 +175,7 @@ const QuizComponent = () => {
                 {activeQuestion > 0 && (
                   <button
                     onClick={prevQuestion}
-                    className="w-1/3 py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700"
+                    className="w-1/3 py-2 px-4 bg-gray-600 text-badge-light font-semibold rounded-lg hover:bg-gray-700"
                   >
                     Back
                   </button>
@@ -179,7 +185,7 @@ const QuizComponent = () => {
                     onClick={() => setActiveQuestion((prev) => prev + 1)}
                     className={`${
                       activeQuestion > 0 ? "w-1/3" : "w-full"
-                    } py-2 px-4  text-white font-semibold rounded-lg bg-blue-light hover:bg-blue-950`}
+                    } py-2 px-4 bg-blue-light text-badge-light font-semibold rounded-lg hover:bg-blue-900`}
                   >
                     Next
                   </button>
@@ -188,7 +194,7 @@ const QuizComponent = () => {
                     onClick={exitReview}
                     className={`${
                       activeQuestion > 0 ? "w-1/3" : "w-full"
-                    } py-2 px-4  text-white font-semibold rounded-lg bg-blue-light hover:bg-blue-950`}
+                    } py-2 px-4 bg-blue-light  font-semibold rounded-lg hover:bg-blue-900`}
                   >
                     Exit Review
                   </button>
@@ -198,16 +204,17 @@ const QuizComponent = () => {
           ) : (
             <div className="quiz-container">
               <h3 id="question" className="text-xl font-semibold mb-6">
-                {question}
+               
+              {question}
               </h3>
-              {answers.map((answer, idx)=> (
+              {answers.map((answer, idx) => (
                 <button
                   key={idx}
                   onClick={() => onAnswerSelected(answer, idx)}
                   className={`block w-full py-2 px-4 mb-4 rounded-lg transition-colors duration-300 ease-in-out ${
                     selectedAnswers[activeQuestion] === idx
-                      ? " text-white bg-blue-light"
-                      : "dark:bg-white bg-brand-dark text-badge-light dark:text-brand-dark hover:bg-gray-950  dark:hover:bg-gray-400"
+                      ? "bg-blue-light text-badge-light"
+                      : "shadow-lg bg-brand-dark text-badge-light dark:text-brand-dark dark:bg-brand-light hover:bg-slate-950 dark:hover:bg-slate-500"
                   }`}
                 >
                   {answer}
@@ -217,7 +224,7 @@ const QuizComponent = () => {
                 {activeQuestion > 0 && (
                   <button
                     onClick={prevQuestion}
-                    className="w-1/3 py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700"
+                    className="w-1/3 py-2 px-4 bg-gray-600 text-badge-light font-semibold rounded-lg hover:bg-gray-700"
                   >
                     Back
                   </button>
@@ -227,7 +234,7 @@ const QuizComponent = () => {
                     onClick={nextQuestion}
                     className={`${
                       activeQuestion > 0 ? "w-1/3" : "w-full"
-                    } py-2 px-4  text-white font-semibold rounded-lg bg-blue-light hover:bg-blue-950`}
+                    } py-2 px-4 bg-blue-light text-badge-light font-semibold rounded-lg hover:bg-blue-900`}
                   >
                     {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
                   </button>
@@ -237,9 +244,8 @@ const QuizComponent = () => {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export default QuizComponent;
-
