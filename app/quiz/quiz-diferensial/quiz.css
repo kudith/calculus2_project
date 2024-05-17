@@ -1,4 +1,5 @@
 @media (max-width: 768px) {
+
   .quiz-container #question,
   .quiz-container #explanation {
     font-size: 12px;

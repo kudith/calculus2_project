@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import katex from "katex";
 import { quiz } from "./data.js";
 import "katex/dist/katex.min.css";

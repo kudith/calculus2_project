@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+
+  .quiz-container #question,
+  .quiz-container #explanation {
+    font-size: 12px;
+    overflow-x: auto;
+    word-wrap: break-word;
+  }
+}
