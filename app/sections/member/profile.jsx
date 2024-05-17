@@ -31,15 +31,15 @@ const teamProfiles = [
     image: slide_image_2,
     name: "Dimas Setiawan",
     role: "Developer",
-    github: "https://github.com/dimasst",
-    instagram: "https://instagram.com/dimasst",
+    github: "https://github.com/Dimas-es",
+    instagram: "https://www.instagram.com/dimasadjy/",
   },
   {
     image: slide_image_3,
     name: "Dhiya Ulhaq Prima Yuga",
     role: "UI/UX Designer",
-    github: "https://github.com/dhiyaulhaq",
-    instagram: "https://instagram.com/dhiyaulhaq",
+    github: "https://github.com/Zhaanq",
+    instagram: "https://www.instagram.com/dhiyaulpy/",
   },
   {
     image: slide_image_4,
@@ -52,8 +52,8 @@ const teamProfiles = [
     image: slide_image_5,
     name: "Amelia Andini",
     role: "Content Writer",
-    github: "https://github.com/ameliaandini",
-    instagram: "https://instagram.com/ameliaandini",
+    github: "https://github.com/Amelia06-anf",
+    instagram: "https://www.instagram.com/aliema._/",
   },
 ];
 
