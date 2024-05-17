@@ -1,6 +1,6 @@
 "use client";
 
-import QuizComponent from "./quizDeterminant";
+import QuizComponent from "./quiz.jsx";
 
 export default function Page() {
   return (
