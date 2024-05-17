@@ -17,7 +17,7 @@ detrixCalc was created as a project for the Calculus 2 course assignment. The ma
 - Allows users to easily calculate matrix determinants.
 - Support for 2x2 and 3x3 matrices.
 
-### Series Calculator
+### Sequences & Series Calculator
 - Allows users to calculate the sum of arithmetic or geometric series.
 - Users can specify the first term, common difference/ratio, and the number of terms to be calculated.
 
@@ -42,9 +42,9 @@ detrixCalc was created as a project for the Calculus 2 course assignment. The ma
 - [ ] Calculus 2 Course
     - [x] Determinant
     - [x] Arithmetic and geometric series
-    - [ ] Complex Number
+    - [x] Complex Number
     - [ ] etc.
-- [ ] Develop a simple quiz
+- [x] Develop a simple quiz
 
 
 ## How to Use
