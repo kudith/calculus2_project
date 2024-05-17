@@ -53,26 +53,13 @@ export function AboutSection() {
             }}
           >
             <p>
-              Welcome to CalcSphere, your trusted resource for all things
-              calculus. Our goal is to provide you with a comprehensive platform
-              to master calculus concepts, from calculating determinants to
-              solving complex problems.
+              DetrixCalc, platform yang tim ciptakan untuk memenuhi tugas mata kuliah Kalkulus II semester 2. Disini kami menyediakan rangkuman materi kuliah yang komprehensif, quiz interaktif untuk menguji pemahaman, dan kalkulator khusus yang membantu dalam memecahkan soal-soal dengan mudah dan cepat.
             </p>
             <p>
-              Our team of experienced mathematicians and developers is dedicated
-              to creating an engaging learning experience for you. Whether
-              you're a student, educator, or enthusiast, we have curated
-              resources and interactive tools to support your journey.
-            </p>
-            <p>
-              With CalcSphere, you'll have access to interactive exercises,
-              detailed explanations, and practice problems that will help you
-              strengthen your understanding of calculus concepts.
+              Kami berdedikasi untuk menyediakan sumber daya belajar yang berkualitas. Kami memahami tantangan yang dihadapi dalam mempelajari kalkulus, sehingga kami berupaya menyajikan materi dengan cara yang lebih sederhana dan mudah dipahami.
             </p>
             <p className="my-3.5">
-              Our mission is to make learning calculus accessible and enjoyable
-              for everyone. We believe in continuous improvement, so feel free
-              to reach out with any feedback or suggestions!
+            Seperti yang dikatakan oleh B.J. Habibie, "Belajar tanpa berpikir itu tidaklah berguna, tapi berpikir tanpa belajar itu sangatlah berbahaya." Kami berharap platform ini dapat menjadi sumber belajar yang membantu berpikir kritis dan mendalam.
             </p>
           </motion.div>
 

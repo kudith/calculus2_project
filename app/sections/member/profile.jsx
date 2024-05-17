@@ -44,9 +44,9 @@ const teamProfiles = [
   {
     image: slide_image_4,
     name: "Sekar Ayu Fatmasari",
-    role: "Content Writer",
-    github: "https://github.com/sekaryu",
-    instagram: "https://instagram.com/sekaryu",
+    role: "Developer",
+    github: "https://github.com/strawberrieez",
+    instagram: "https://instagram.com/xyjnee_",
   },
   {
     image: slide_image_5,
