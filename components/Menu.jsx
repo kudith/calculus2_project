@@ -79,9 +79,9 @@ export function Menu({ onClick = () => {} }) {
           </Link>
         </li>
         <li>
-          <div className="relative group text-xl">
+          <div className="relative group text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full">
             <span className="text-xl cursor-pointer" onClick={(e) => handleOnClick(e, "/course")}>Course</span>
-            <ul className="absolute hidden group-hover:block bg-white shadow-md py-2 px-4 rounded-md w-32 z-10">
+            <ul className="absolute hidden group-hover:block  shadow-xl py-2 px-4 rounded-md w-32 z-10">
               <li>
                 <Link
                   href="/course/determinant"
