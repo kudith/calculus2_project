@@ -1,56 +1,88 @@
 # detrixCalc
 
-detrixCalc is a project for the Calculus 2 course assignment. This website provides content or features such as determinant calculator, series calculator, Calculus 2 materials, and a simple quiz. The website is built using Next.js, Tailwind CSS, and Framer Motion technologies.
+detrixCalc is an online tool designed to fulfill the assignment requirements of the Calculus II course. This platform offers a range of features including a determinant calculator, series calculator, comprehensive Calculus II materials, and interactive quizzes. The platform is developed using Next.js, Tailwind CSS, and Framer Motion technologies.
 
 ## About the Project
-detrixCalc was created as a project for the Calculus 2 course assignment. The main goal of this project is to provide users with an easy-to-use online tool for calculating matrix determinants, sum of arithmetic series, as well as learning and understanding Calculus 2 concepts with the provided materials.
+
+DetrixCalc was created by our team as a project for the Calculus II semester 2 course. The platform provides a thorough summary of lecture materials, interactive quizzes to assess understanding, and specialized calculators to solve problems efficiently and accurately.
+
 
 ## detrixCalc Development Team
+
 - **Lead Developer**: [Ginanjar Aditiya Prianata]
+- **Developer**: [Sekar Ayu Fatmasari]
 - **Developer**: [Dimas Setiawan]
-- **UI/UX Design**: [Dhiya Ulhaq Prima Yuga]
-- **Content Writer**: [Sekar Ayu Fatmasari]
+- **UI/UX Designer**: [Dhiya Ulhaq Prima Yuga]
 - **Content Writer**: [Amelia Andini]
 
 ## Key Features
+
 ### Determinant Calculator
-- Allows users to easily calculate matrix determinants.
-- Support for 2x2 and 3x3 matrices.
+
+- **Functionality**: Calculate matrix determinants with ease.
+- **Supported Matrices**: 2x2 and 3x3 matrices.
 
 ### Sequences & Series Calculator
-- Allows users to calculate the sum of arithmetic or geometric series.
-- Users can specify the first term, common difference/ratio, and the number of terms to be calculated.
 
-### Calculus 2 Course
-- Contains Calculus 2 materials covering topics such as double integrals, differential equations, and more.
-- Materials are presented in an easy-to-understand format with accompanying example problems.
+- **Arithmetic Series Calculator**: Calculate the sum of arithmetic series.
+- **Geometric Series Calculator**: Calculate the sum of geometric series.
+- **Input Parameters**: First term, common difference/ratio, and number of terms.
+
+### Calculus II Course
+
+Provides comprehensive materials covering six key topics:
+
+1. **Determinant**
+   - Understanding and calculating matrix determinants.
+2. **Arithmetic and Geometric Series**
+   - Fundamental concepts and calculations.
+3. **Complex Numbers**
+   - Introduction and operations involving complex numbers.
+4. **Vectors**
+   - Basics of vectors, vector operations, and applications.
+5. **Differential Equations**
+   - Solving and applying differential equations.
+6. **Double Integrals**
+   - Concept and computation of double integrals.
 
 ### Quiz
-- Features a simple quiz to test users' understanding of Calculus 2 materials.
-- Users can view their quiz results.
+
+- **Coverage**: Six quizzes corresponding to the six course topics.
+- **Structure**: Each quiz contains 5 questions.
+- **Purpose**: Test and reinforce users' understanding of the course materials.
+- **Results**: Users can view their quiz scores to assess their knowledge.
 
 ## Technologies Used
-- **Next.js**: React framework for building web applications with SSR (Server-Side Rendering) and SSG (Static Site Generation).
-- **Tailwind CSS**: Utility-first CSS framework for responsive and customizable web design.
-- **Framer Motion**: Animation library for React enabling the creation of interactive and seamless animations.
+
+- **Next.js**: React framework for building server-side rendered (SSR) and static site generated (SSG) web applications.
+- **Tailwind CSS**: A utility-first CSS framework for creating responsive and customizable designs.
+- **Framer Motion**: A React animation library for creating interactive and seamless animations.
 
 ## detrixCalc Development
 
 - [x] Determinant Calculator
-- [x] Arithmetic Series calculator
-- [ ] Geometric Series calculator
-- [ ] Calculus 2 Course
-    - [x] Determinant
-    - [x] Arithmetic and geometric series
-    - [x] Complex Number
-    - [ ] etc.
-- [x] Develop a simple quiz
+- [x] Arithmetic Series Calculator
+- [x] Geometric Series Calculator
+- [x] Calculus II Course
+  - [x] Determinant
+  - [x] Arithmetic and Geometric Series
+  - [x] Complex Numbers
+  - [x] Vectors
+  - [x] Differential Equations
+  - [x] Double Integrals
+- [x] Develop Simple Quizzes
+  - [x] Determinant Quiz (5 questions)
+  - [x] Arithmetic and Geometric Series Quiz (5 questions)
+  - [x] Complex Numbers Quiz (5 questions)
+  - [x] Vectors Quiz (5 questions)
+  - [x] Differential Equations Quiz (5 questions)
+  - [x] Double Integrals Quiz (5 questions)
 
+## How to Use in localhost
 
-## How to Use
-1. Make sure you have Node.js and npm installed.
-2. Clone this repository into your local directory.
-3. Open the terminal and navigate to the project directory.
-4. Run the command `npm install` or `npm install --legacy-peer-deps` to install all dependencies.
-5. Run the command `npm run dev` to run in development mode.
-6. Open a browser and access `http://localhost:3000` to view the application.
+1. **Prerequisites**: Ensure you have Node.js and npm installed.
+2. **Clone Repository**: Clone this repository into your local directory using `git clone`.
+3. **Navigate to Directory**: Open the terminal and navigate to the project directory.
+4. **Install Dependencies**: Run `npm install` or `npm install --legacy-peer-deps` to install all necessary dependencies.
+5. **Start Development Server**: Run `npm run dev` to start the application in development mode.
+6. **Access Application**: Open a browser and go to `http://localhost:3000` to view and use the application.
