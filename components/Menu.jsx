@@ -86,34 +86,36 @@ export function Menu({ onClick = () => {} }) {
         <li>
           <div className="relative group text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full">
             <span className="text-xl cursor-pointer" onClick={(e) => handleOnClick(e, "/course")}>Course</span>
-            <ul className="absolute hidden group-hover:block shadow-xl py-2 px-4 rounded-md w-32 z-10">
+            <ul className="absolute hidden group-hover:block shadow-xl py-2 px-2 dark:bg-brand-dark bg-brand-light rounded-md w-44 z-10 transition hover:transition-all hover:ease-in-out">
               <li>
                 <Link
                   href="/course/determinant"
                   onClick={(e) => handleOnClick(e, "/course/determinant")}
-                  className="text-sm block hover:bg-gray-100"
+                  className="text-sm block "
                 >
                   Determinant
                 </Link>
               </li>
+              <hr className="h-px my-1 bg-black dark:bg-brand-light"/>
               <li>
                 <Link
                   href="/course/complex-numbers"
                   onClick={(e) =>
                     handleOnClick(e, "/course/complex-numbers")
                   }
-                  className="text-sm block hover:bg-gray-100"
+                  className="text-sm block "
                 >
                   Complex Numbers
                 </Link>
               </li>
+              <hr className="h-px my-1 bg-black dark:bg-brand-light"/>
               <li>
                 <Link
                   href="/course/series"
                   onClick={(e) => handleOnClick(e, "/course/series-arithmetic")}
-                  className="text-sm block hover:bg-gray-100"
+                  className="text-sm block "
                 >
-                  Series
+                  Sequences & Series
                 </Link>
               </li>
             </ul>
