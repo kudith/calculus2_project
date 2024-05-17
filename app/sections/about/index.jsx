@@ -42,13 +42,13 @@ export function AboutSection() {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  opacity: { duration: 0.5, ease: "easeOut" }, // Mengatur efek fade
-                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, // Mengatur pergerakan dari bawah ke atas
+                  opacity: { duration: 0.5, ease: "easeOut" },
+                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] },
                 },
               },
               hidden: {
                 opacity: 0,
-                y: 50, // Posisi awal dari bawah
+                y: 50,
               },
             }}
           >
@@ -74,22 +74,22 @@ export function AboutSection() {
                 y: 0,
                 transition: {
                   opacity: { duration: 0.5, ease: "easeOut" },
-                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, // Mengatur pergerakan dari bawah ke atas
+                  y: { duration: 1, ease: [0.17, 0.55, 0.55, 1] },
                 },
               },
               hidden: {
                 opacity: 0,
-                y: 50, // Posisi awal dari bawah
+                y: 50,
               },
             }}
           >
-            {/* Komponen Image menggunakan layout responsif */}
+            {/* Komponen Image  */}
             <Image
               src={"/assets/calculus2.svg"}
               alt="Calculus illustration"
               width={500}
               height={500}
-              className="w-full h-auto" // gunakan className untuk mengatur ukuran
+              className="w-full h-auto"
               priority
             />
           </motion.div>

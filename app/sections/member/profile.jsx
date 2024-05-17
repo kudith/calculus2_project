@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./profile.css";
 
-// Import gambar profil tim dan data
+
 import slide_image_1 from "/public/assets/images/adit.jpeg";
 import slide_image_2 from "/public/assets/images/dimas.jpeg";
 import slide_image_3 from "/public/assets/images/dhiya.jpg";
