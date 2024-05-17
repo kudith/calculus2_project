@@ -25,10 +25,12 @@ export function ArithmeticSeriesCalculator() {
 
     const nthTerm = a + (n - 1) * d;
     const sum = (n / 2) * (2 * a + (n - 1) * d);
+    const series = Array.from({ length: n }, (_, i) => a + i * d).join(", ");
     const calculationDetail = `Suku ke-${n} (Un): ${nthTerm}`;
     const sumDetail = `Jumlah ${n} suku pertama (Sn): ${sum}`;
+    const seriesDetail = `Deret: [${series}]`;
 
-    const newResult = `${calculationDetail}, ${sumDetail}`;
+    const newResult = `${calculationDetail}, ${sumDetail}, ${seriesDetail}`;
     setResult(newResult);
     setInputError(null);
 
@@ -45,6 +47,12 @@ export function ArithmeticSeriesCalculator() {
 
   const handleClearHistory = () => {
     setHistory([]);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleCalculate();
+    }
   };
 
   return (
@@ -73,6 +81,7 @@ export function ArithmeticSeriesCalculator() {
                 className="md:w-56 w-20 px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
                 value={firstTerm}
                 onChange={(e) => setFirstTerm(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
             </div>
 
@@ -89,6 +98,7 @@ export function ArithmeticSeriesCalculator() {
                 className="md:w-56 w-20 px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
                 value={commonDifference}
                 onChange={(e) => setCommonDifference(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
             </div>
 
@@ -105,6 +115,7 @@ export function ArithmeticSeriesCalculator() {
                 className="md:w-56 w-20 px-3 py-2 border rounded-lg dark:text-gray-50 text-center focus:outline-none focus:ring-2 focus:ring-blue-light"
                 value={termNumber}
                 onChange={(e) => setTermNumber(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
             </div>
           </div>

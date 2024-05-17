@@ -77,6 +77,12 @@ export function DeterminantCalculator() {
     setHistory([]);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleCalculate();
+    }
+  };
+
   return (
     <LazyMotion features={domAnimation}>
       <div
@@ -119,6 +125,7 @@ export function DeterminantCalculator() {
                   onChange={(e) =>
                     handleMatrixChange(rowIndex, colIndex, e.target.value)
                   }
+                  onKeyPress={handleKeyPress}
                   className="matrix-cell md:w-28 w-20 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-light text-center"
                 />
               ))}

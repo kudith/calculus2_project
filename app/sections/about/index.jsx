@@ -53,7 +53,7 @@ export function AboutSection() {
             }}
           >
             <p>
-              DetrixCalc, platform yang tim ciptakan untuk memenuhi tugas mata kuliah Kalkulus II semester 2. Disini kami menyediakan rangkuman materi kuliah yang komprehensif, quiz interaktif untuk menguji pemahaman, dan kalkulator khusus yang membantu dalam memecahkan soal-soal dengan mudah dan cepat.
+              DetrixCalc, platform yang tim kami ciptakan untuk memenuhi tugas mata kuliah Kalkulus II semester 2. Disini kami menyediakan rangkuman materi kuliah yang komprehensif, quiz interaktif untuk menguji pemahaman, dan kalkulator khusus yang membantu dalam memecahkan soal-soal dengan mudah dan cepat.
             </p>
             <p>
               Kami berdedikasi untuk menyediakan sumber daya belajar yang berkualitas. Kami memahami tantangan yang dihadapi dalam mempelajari kalkulus, sehingga kami berupaya menyajikan materi dengan cara yang lebih sederhana dan mudah dipahami.

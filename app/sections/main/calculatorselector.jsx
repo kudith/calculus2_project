@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ArithmeticSeriesCalculator from "./SeriesCalculator";
+import GeometricSeriesCalculator from "./geometricSeries";
 import DeterminantCalculator from "./determinan";
 
 const CalculatorSelector = () => {
@@ -54,6 +55,19 @@ const CalculatorSelector = () => {
           </motion.button>
           <motion.button
             className={`py-2 px-4 rounded-lg transition ${
+              calculatorType === "geometricSeries"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleCalculatorChange("geometricSeries")}
+            transition={{ duration: 0.5 }}
+          >
+            Deret Geometri
+          </motion.button>
+          <motion.button
+            className={`py-2 px-4 rounded-lg transition ${
               calculatorType === "determinant"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -77,6 +91,16 @@ const CalculatorSelector = () => {
               transition={{ type: "spring", stiffness: 100 }}
             >
               <ArithmeticSeriesCalculator />
+            </motion.div>
+          ) : calculatorType === "geometricSeries" ? (
+            <motion.div
+              key="geometricSeries"
+              initial={{ opacity: 0.5, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ type: "spring", stiffness: 100 }}
+            >
+              <GeometricSeriesCalculator />
             </motion.div>
           ) : (
             <motion.div
