@@ -56,119 +56,34 @@ export default function Home() {
         </motion.div>
         {/* Bagian Kuis */}
         <Flex direction="row" flexWrap="wrap" gap={6} justifyContent="center">
-          <motion.div 
-            className="shadow-xl rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-            _hover={{ bg: "blue.50" }}
-          >
-            <Link href="/quiz/quiz-determinan" passHref>
-              <div className="flex-grow cursor-pointer">
-                <h2 className="text-lg font-semibold text-blue-600">Quiz Determinan</h2>
-                <p className=" text-sm">Uji pengetahuan Kamu tentang determinan!</p>
-              </div>
-            </Link>
-            <Link href="/quiz/quiz-determinan" passHref>
-              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
-            </Link>
-          </motion.div>
-          
-          <motion.div 
-            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-            _hover={{ bg: "blue.50" }}
-          >
-            <Link href="/quiz/quiz-deret" passHref>
-              <div className="flex-grow cursor-pointer">
-                <h2 className="text-lg font-semibold text-blue-600">Quiz Barisan & Deret</h2>
-                <p className=" text-sm">Tantang diri Kamu dengan barisan dan deret!</p>
-              </div>
-            </Link>
-            <Link href="/quiz/quiz-deret" passHref>
-              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
-            </Link>
-          </motion.div>
-
-          <motion.div 
-            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-            _hover={{ bg: "blue.50" }}
-          >
-            <Link href="/quiz/quiz-bilKompleks" passHref>
-              <div className="flex-grow cursor-pointer">
-                <h2 className="text-lg font-semibold text-blue-600">Quiz Bilangan Kompleks</h2>
-                <p className=" text-sm">Tantang diri Kamu dengan bilangan kompleks!</p>
-              </div>
-            </Link>
-            <Link href="/quiz/quiz-bilKompleks" passHref>
-              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
-            </Link>
-          </motion.div>
-
-          <motion.div 
-            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-            _hover={{ bg: "blue.50" }}
-          >
-            <Link href="/quiz/quiz-diferensial" passHref>
-              <div className="flex-grow cursor-pointer">
-                <h2 className="text-lg font-semibold text-blue-600">Quiz Diferensial(Turunan)</h2>
-                <p className=" text-sm">Tantang diri Kamu dengan diferensial(turunan)!</p>
-              </div>
-            </Link>
-            <Link href="/quiz/quiz-diferensial" passHref>
-              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
-            </Link>
-          </motion.div>
-
-          <motion.div 
-            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-            _hover={{ bg: "blue.50" }}
-          >
-            <Link href="/quiz/quiz-integralLipat" passHref>
-              <div className="flex-grow cursor-pointer">
-                <h2 className="text-lg font-semibold text-blue-600">Quiz Integral Lipat</h2>
-                <p className=" text-sm">Tantang diri Kamu dengan integral lipat!</p>
-              </div>
-            </Link>
-            <Link href="/quiz/quiz-integralLipat" passHref>
-              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
-            </Link>
-          </motion.div>
-
-          <motion.div 
-            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-            _hover={{ bg: "blue.50" }}
-          >
-            <Link href="/quiz/quiz-vektor" passHref>
-              <div className="flex-grow cursor-pointer">
-                <h2 className="text-lg font-semibold text-blue-600">Quiz vektor</h2>
-                <p className=" text-sm">Tantang diri Kamu dengan vektor!</p>
-              </div>
-            </Link>
-            <Link href="/quiz/quiz-vektor" passHref>
-              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
-            </Link>
-          </motion.div>
+          {[
+            { href: "/quiz/quiz-determinan", title: "Quiz Determinan", description: "Uji pengetahuan Kamu tentang determinan!" },
+            { href: "/quiz/quiz-deret", title: "Quiz Barisan & Deret", description: "Tantang diri Kamu dengan barisan dan deret!" },
+            { href: "/quiz/quiz-bilKompleks", title: "Quiz Bilangan Kompleks", description: "Tantang diri Kamu dengan bilangan kompleks!" },
+            { href: "/quiz/quiz-diferensial", title: "Quiz Diferensial", description: "Tantang diri Kamu dengan diferensial!" },
+            { href: "/quiz/quiz-integralLipat", title: "Quiz Integral Lipat 2", description: "Tantang diri Kamu dengan integral lipat 2!" },
+            { href: "/quiz/quiz-vektor", title: "Quiz vektor", description: "Tantang diri Kamu dengan vektor!" },
+          ].map((quiz, index) => (
+            <motion.div 
+              key={index}
+              className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-between w-64"
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              _hover={{ bg: "blue.50" }}
+            >
+              <Link href={quiz.href} passHref>
+                <div className="flex-grow cursor-pointer">
+                  <h2 className="text-lg font-semibold text-blue-600">{quiz.title}</h2>
+                  <p className="text-sm">{quiz.description}</p>
+                </div>
+              </Link>
+              <Link href={quiz.href} passHref>
+                <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
+              </Link>
+            </motion.div>
+          ))}
         </Flex>
       </Box>
     </ChakraProvider>

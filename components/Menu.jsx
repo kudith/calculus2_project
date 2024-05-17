@@ -118,6 +118,36 @@ export function Menu({ onClick = () => {} }) {
                   Sequences & Series
                 </Link>
               </li>
+              <hr className="h-px my-1 bg-black dark:bg-brand-light"/>
+              <li>
+                <Link
+                  href="/course/series"
+                  onClick={(e) => handleOnClick(e, "/course/series-arithmetic")}
+                  className="text-sm block "
+                >
+                  Differential
+                </Link>
+              </li>
+              <hr className="h-px my-1 bg-black dark:bg-brand-light"/>
+              <li>
+                <Link
+                  href="/course/series"
+                  onClick={(e) => handleOnClick(e, "/course/series-arithmetic")}
+                  className="text-sm block "
+                >
+                  Vector
+                </Link>
+              </li>
+              <hr className="h-px my-1 bg-black dark:bg-brand-light"/>
+              <li>
+                <Link
+                  href="/course/series"
+                  onClick={(e) => handleOnClick(e, "/course/series-arithmetic")}
+                  className="text-sm block "
+                >
+                  Double Integral
+                </Link>
+              </li>
             </ul>
           </div>
         </li>
