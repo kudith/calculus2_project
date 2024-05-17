@@ -1,10 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import katex from "katex";
 import { quiz } from "./data.js";
 import "katex/dist/katex.min.css";
 import "./quiz.css"; 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const QuizComponent = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
@@ -91,7 +91,7 @@ const QuizComponent = () => {
   }, [activeQuestion, selectedAnswers]);
 
   return (
-    <motion.div 
+    <motion.div  
     className="min-h-screen flex justify-center items-center"
     initial={{ opacity: 0, y: -50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -133,13 +133,13 @@ const QuizComponent = () => {
               </p>
               <button
                 onClick={startReview}
-                className="mt-8 w-full py-2 px-4 bg-blue-light  font-semibold rounded-lg hover:bg-blue-900"
+                className="mt-8 w-full py-2 px-4  text-white font-semibold bg-blue-light rounded-lg hover:bg-blue-950"
               >
                 Review
               </button>
               <button
                 onClick={() => window.location.reload()}
-                className="mt-4 w-full py-2 px-4 bg-gray-600  font-semibold rounded-lg hover:bg-gray-700"
+                className="mt-4 w-full py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700"
               >
                 Restart
               </button>
@@ -158,8 +158,8 @@ const QuizComponent = () => {
                   className={`block w-full py-2 px-4 mb-4 rounded-lg ${
                     selectedAnswers[activeQuestion] === idx
                       ? answers[selectedAnswers[activeQuestion]] === correctAnswer
-                        ? "bg-green-600"
-                        : "bg-red-600"
+                        ? "bg-green-600 text-white"
+                        : "bg-red-600 text-white"
                       : "shadow-lg bg-brand-dark dark:bg-badge-light text-brand-light dark:text-brand-dark"
                   }`}
                   disabled
@@ -175,7 +175,7 @@ const QuizComponent = () => {
                 {activeQuestion > 0 && (
                   <button
                     onClick={prevQuestion}
-                    className="w-1/3 py-2 px-4 bg-gray-600 text-badge-light font-semibold rounded-lg hover:bg-gray-700"
+                    className="w-1/3 py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700"
                   >
                     Back
                   </button>
@@ -185,7 +185,7 @@ const QuizComponent = () => {
                     onClick={() => setActiveQuestion((prev) => prev + 1)}
                     className={`${
                       activeQuestion > 0 ? "w-1/3" : "w-full"
-                    } py-2 px-4 bg-blue-light text-badge-light font-semibold rounded-lg hover:bg-blue-900`}
+                    } py-2 px-4  text-white font-semibold rounded-lg bg-blue-light hover:bg-blue-950`}
                   >
                     Next
                   </button>
@@ -194,7 +194,7 @@ const QuizComponent = () => {
                     onClick={exitReview}
                     className={`${
                       activeQuestion > 0 ? "w-1/3" : "w-full"
-                    } py-2 px-4 bg-blue-light  font-semibold rounded-lg hover:bg-blue-900`}
+                    } py-2 px-4  text-white font-semibold rounded-lg bg-blue-light hover:bg-blue-950`}
                   >
                     Exit Review
                   </button>
@@ -204,17 +204,16 @@ const QuizComponent = () => {
           ) : (
             <div className="quiz-container">
               <h3 id="question" className="text-xl font-semibold mb-6">
-               
-              {question}
+                {question}
               </h3>
-              {answers.map((answer, idx) => (
+              {answers.map((answer, idx)=> (
                 <button
                   key={idx}
                   onClick={() => onAnswerSelected(answer, idx)}
                   className={`block w-full py-2 px-4 mb-4 rounded-lg transition-colors duration-300 ease-in-out ${
                     selectedAnswers[activeQuestion] === idx
-                      ? "bg-blue-light text-badge-light"
-                      : "shadow-lg bg-brand-dark text-badge-light dark:text-brand-dark dark:bg-brand-light hover:bg-slate-950 dark:hover:bg-slate-500"
+                      ? " text-white bg-blue-light"
+                      : "dark:bg-white bg-brand-dark text-badge-light dark:text-brand-dark hover:bg-gray-950  dark:hover:bg-gray-400"
                   }`}
                 >
                   {answer}
@@ -224,7 +223,7 @@ const QuizComponent = () => {
                 {activeQuestion > 0 && (
                   <button
                     onClick={prevQuestion}
-                    className="w-1/3 py-2 px-4 bg-gray-600 text-badge-light font-semibold rounded-lg hover:bg-gray-700"
+                    className="w-1/3 py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700"
                   >
                     Back
                   </button>
@@ -234,7 +233,7 @@ const QuizComponent = () => {
                     onClick={nextQuestion}
                     className={`${
                       activeQuestion > 0 ? "w-1/3" : "w-full"
-                    } py-2 px-4 bg-blue-light text-badge-light font-semibold rounded-lg hover:bg-blue-900`}
+                    } py-2 px-4  text-white font-semibold rounded-lg bg-blue-light hover:bg-blue-950`}
                   >
                     {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
                   </button>
@@ -249,3 +248,4 @@ const QuizComponent = () => {
 };
 
 export default QuizComponent;
+

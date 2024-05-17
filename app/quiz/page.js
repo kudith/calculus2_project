@@ -64,13 +64,13 @@ export default function Home() {
             transition={{ duration: 0.2 }}
             _hover={{ bg: "blue.50" }}
           >
-            <Link href="/quiz/quizdet" passHref>
+            <Link href="/quiz/quiz-determinan" passHref>
               <div className="flex-grow cursor-pointer">
                 <h2 className="text-lg font-semibold text-blue-600">Quiz Determinan</h2>
                 <p className=" text-sm">Uji pengetahuan Kamu tentang determinan!</p>
               </div>
             </Link>
-            <Link href="/quiz/quizdet" passHref>
+            <Link href="/quiz/quiz-determinan" passHref>
               <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
             </Link>
           </motion.div>
@@ -83,13 +83,89 @@ export default function Home() {
             transition={{ duration: 0.2 }}
             _hover={{ bg: "blue.50" }}
           >
-            <Link href="/quiz/quizder" passHref>
+            <Link href="/quiz/quiz-deret" passHref>
               <div className="flex-grow cursor-pointer">
                 <h2 className="text-lg font-semibold text-blue-600">Quiz Barisan & Deret</h2>
                 <p className=" text-sm">Tantang diri Kamu dengan barisan dan deret!</p>
               </div>
             </Link>
-            <Link href="/quiz/quizder" passHref>
+            <Link href="/quiz/quiz-deret" passHref>
+              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
+            </Link>
+          </motion.div>
+
+          <motion.div 
+            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            _hover={{ bg: "blue.50" }}
+          >
+            <Link href="/quiz/quiz-bilKompleks" passHref>
+              <div className="flex-grow cursor-pointer">
+                <h2 className="text-lg font-semibold text-blue-600">Quiz Bilangan Kompleks</h2>
+                <p className=" text-sm">Tantang diri Kamu dengan bilangan kompleks!</p>
+              </div>
+            </Link>
+            <Link href="/quiz/quiz-bilKompleks" passHref>
+              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
+            </Link>
+          </motion.div>
+
+          <motion.div 
+            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            _hover={{ bg: "blue.50" }}
+          >
+            <Link href="/quiz/quiz-diferensial" passHref>
+              <div className="flex-grow cursor-pointer">
+                <h2 className="text-lg font-semibold text-blue-600">Quiz Diferensial(Turunan)</h2>
+                <p className=" text-sm">Tantang diri Kamu dengan diferensial(turunan)!</p>
+              </div>
+            </Link>
+            <Link href="/quiz/quiz-diferensial" passHref>
+              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
+            </Link>
+          </motion.div>
+
+          <motion.div 
+            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            _hover={{ bg: "blue.50" }}
+          >
+            <Link href="/quiz/quiz-integralLipat" passHref>
+              <div className="flex-grow cursor-pointer">
+                <h2 className="text-lg font-semibold text-blue-600">Quiz Integral Lipat</h2>
+                <p className=" text-sm">Tantang diri Kamu dengan integral lipat!</p>
+              </div>
+            </Link>
+            <Link href="/quiz/quiz-integralLipat" passHref>
+              <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
+            </Link>
+          </motion.div>
+
+          <motion.div 
+            className="shadow-lg rounded-lg p-4 transform transition duration-300 flex items-center justify-center"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            _hover={{ bg: "blue.50" }}
+          >
+            <Link href="/quiz/quiz-vektor" passHref>
+              <div className="flex-grow cursor-pointer">
+                <h2 className="text-lg font-semibold text-blue-600">Quiz vektor</h2>
+                <p className=" text-sm">Tantang diri Kamu dengan vektor!</p>
+              </div>
+            </Link>
+            <Link href="/quiz/quiz-vektor" passHref>
               <ArrowRightIcon className="h-6 w-6 text-blue-600 cursor-pointer" />
             </Link>
           </motion.div>
