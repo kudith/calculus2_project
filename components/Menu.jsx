@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { LazyMotion, domAnimation, m } from "framer-motion";
@@ -12,7 +11,6 @@ export function Menu({ onClick = () => {} }) {
   const { scrollToEl } = useScrollTo();
   const router = useRouter();
 
-  // Fungsi untuk menangani klik pada tautan
   const handleOnClick = (e, url) => {
     e.preventDefault();
 
@@ -20,12 +18,18 @@ export function Menu({ onClick = () => {} }) {
       router.push(url);
       onClick();
     } else {
-      scrollToEl(e);
-      setTimeout(() => onClick(), 350);
+      if (pathname.startsWith('/quiz')) {
+        router.push("/");
+        onClick();
+      } else {
+        scrollToEl(e);
+        setTimeout(() => onClick(), 350);
+      }
     }
   };
 
-  // Menu utama (link navigasi dan pengguliran)
+  const isCoursePage = pathname.startsWith('/course');
+
   const mainMenu = (
     <m.nav
       initial={initial}
@@ -37,9 +41,9 @@ export function Menu({ onClick = () => {} }) {
       <ul className="flex justify-center gap-5 flex-col md:flex-row items-start md:items-center">
         <li>
           <Link
-            href={pathname === SITE_ROUTES.course ? "/" : "#intro"}
+            href={isCoursePage ? "/" : "#intro"}
             onClick={(e) =>
-              handleOnClick(e, pathname === SITE_ROUTES.course ? "/" : null)
+              handleOnClick(e, isCoursePage ? "/" : null) 
             }
             className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
@@ -48,9 +52,9 @@ export function Menu({ onClick = () => {} }) {
         </li>
         <li>
           <Link
-            href={pathname === SITE_ROUTES.course ? "/" : "#about"}
+            href={isCoursePage ? "/" : "#about"}
             onClick={(e) =>
-              handleOnClick(e, pathname === SITE_ROUTES.course ? "/" : null)
+              handleOnClick(e, isCoursePage ? "/#about" : null) 
             }
             className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
@@ -59,9 +63,9 @@ export function Menu({ onClick = () => {} }) {
         </li>
         <li>
           <Link
-            href={pathname === SITE_ROUTES.course ? "/" : "#calculator"}
+            href={isCoursePage ? "/" : "#calculator"}
             onClick={(e) =>
-              handleOnClick(e, pathname === SITE_ROUTES.course ? "/" : null)
+              handleOnClick(e, isCoursePage ? "/#calculator" : null) 
             }
             className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
@@ -70,9 +74,9 @@ export function Menu({ onClick = () => {} }) {
         </li>
         <li>
           <Link
-            href={pathname === SITE_ROUTES.course ? "/" : "#team"}
+            href={isCoursePage ? "/" : "#team"}
             onClick={(e) =>
-              handleOnClick(e, pathname === SITE_ROUTES.course ? "/" : null)
+              handleOnClick(e, isCoursePage ? "/#team" : null) 
             }
             className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
@@ -80,80 +84,53 @@ export function Menu({ onClick = () => {} }) {
           </Link>
         </li>
         <li>
+          <div className="relative group text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full">
+            <span className="text-xl cursor-pointer" onClick={(e) => handleOnClick(e, "/course")}>Course</span>
+            <ul className="absolute hidden group-hover:block shadow-xl py-2 px-4 rounded-md w-32 z-10">
+              <li>
+                <Link
+                  href="/course/determinant"
+                  onClick={(e) => handleOnClick(e, "/course/determinant")}
+                  className="text-sm block hover:bg-gray-100"
+                >
+                  Determinant
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/course/complex-numbers"
+                  onClick={(e) =>
+                    handleOnClick(e, "/course/complex-numbers")
+                  }
+                  className="text-sm block hover:bg-gray-100"
+                >
+                  Complex Numbers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/course/series"
+                  onClick={(e) => handleOnClick(e, "/course/series-arithmetic")}
+                  className="text-sm block hover:bg-gray-100"
+                >
+                  Series
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
           <Link
-            href="/course"
-            onClick={(e) => handleOnClick(e, "/course")}
+            href="/quiz"
+            onClick={(e) => handleOnClick(e, "/quiz")}
             className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
           >
-            Course
+            Quiz
           </Link>
         </li>
       </ul>
     </m.nav>
   );
 
-  // Menu untuk halaman kursus
-  const backMenu = (
-    <m.nav
-      initial={initial}
-      animate={animate}
-      exit={exit}
-      transition={transition}
-      role="menu"
-    >
-      <ul className="flex justify-center gap-5 flex-col md:flex-row items-start md:items-center">
-        <li>
-          <Link
-            href="/"
-            onClick={(e) => handleOnClick(e, "/")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/#about"
-            onClick={(e) => handleOnClick(e, "/#about")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/#calculator"
-            onClick={(e) => handleOnClick(e, "/#calculator")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
-          >
-            Calculator
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/#team"
-            onClick={(e) => handleOnClick(e, "/#team")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
-          >
-            Team
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/course"
-            onClick={(e) => handleOnClick(e, "/course")}
-            className="relative text-xl hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
-          >
-            Course
-          </Link>
-        </li>
-      </ul>
-    </m.nav>
-  );
-
-  // Pilih konten yang akan ditampilkan berdasarkan `pathname`
-  const content = pathname === SITE_ROUTES.course ? backMenu : mainMenu;
-
-  // Kembalikan konten yang dipilih
-  return <LazyMotion features={domAnimation}>{content}</LazyMotion>;
+  return <LazyMotion features={domAnimation}>{mainMenu}</LazyMotion>;
 }
