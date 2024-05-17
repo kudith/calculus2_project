@@ -26,6 +26,17 @@ export function TechnologiesSection() {
     }
   }, [inView]);
 
+  const technologies = [
+    { src: Html, label: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    { src: Css, label: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    { src: Javascript, label: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { src: ReactImg, label: "React", url: "https://reactjs.org/" },
+    { src: Tailwind, label: "Tailwind", url: "https://tailwindcss.com/" },
+    { src: FramerMotion, label: "Framer Motion", url: "https://www.framer.com/motion/" },
+    { src: Github, label: "Github", url: "https://github.com/" },
+    { src: NextJS, label: "NextJS", url: "https://nextjs.org/" },
+  ];
+
   return (
     <div id="technologies" className="w-full lg:h-screen p-2">
       <div className="max-w-[1240px] mx-auto mt-44 md:mt-auto flex flex-col justify-center h-full">
@@ -45,45 +56,37 @@ export function TechnologiesSection() {
           following technologies and tools:
         </p>
         <motion.div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { src: Html, label: "HTML" },
-            { src: Css, label: "CSS" },
-            { src: Javascript, label: "JavaScript" },
-            { src: ReactImg, label: "React" },
-            { src: Tailwind, label: "Tailwind" },
-            { src: FramerMotion, label: "Framer Motion" },
-            { src: Github, label: "Github" },
-            { src: NextJS, label: "NextJS" },
-          ].map((tech, index) => (
-            <motion.div
-              ref={ref}
-              key={index}
-              className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: isVisible ? 1 : 0,
-                scale: isVisible ? 1 : 0.8,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: "easeInOut",
-              }}
-            >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
-                <div className="m-auto">
-                  <Image
-                    src={tech.src}
-                    width="64px"
-                    height="64px"
-                    alt={tech.label}
-                  />
+          {technologies.map((tech, index) => (
+            <a href={tech.url} target="_blank" rel="noopener noreferrer" key={index}>
+              <motion.div
+                ref={ref}
+                className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity: isVisible ? 1 : 0,
+                  scale: isVisible ? 1 : 0.8,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: "easeInOut",
+                }}
+              >
+                <div className="grid grid-cols-2 gap-4 justify-center items-center">
+                  <div className="m-auto">
+                    <Image
+                      src={tech.src}
+                      width="64px"
+                      height="64px"
+                      alt={tech.label}
+                    />
+                  </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <h3>{tech.label}</h3>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center justify-center">
-                  <h3>{tech.label}</h3>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </a>
           ))}
         </motion.div>
       </div>
