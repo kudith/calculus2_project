@@ -7,7 +7,7 @@ export function DeterminantContent() {
   return (
     <LazyMotion features={domAnimation}>
       <motion.div
-        className="calculus2-content mx-auto p-8 rounded-md shadow-md"
+        className="continer-md mx-auto md:p-8 p-4 rounded-md shadow-md"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}

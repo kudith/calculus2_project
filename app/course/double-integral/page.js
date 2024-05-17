@@ -1,13 +1,10 @@
 "use client";
-
-import { ArithmeticGeometricSequenceContent } from "./seriesAritmethic";
-
-
+import { DoubleIntegralContent } from "./double-integral";
 
 export default function Page() {
   return (
     <div className="container-md overflow-hidden">
-     <ArithmeticGeometricSequenceContent/>
+     <DoubleIntegralContent/>
     </div>
   );
 }

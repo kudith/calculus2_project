@@ -1,13 +1,13 @@
 "use client";
 
-import { ComplexNumbersContent } from "./complexNumber";
+import { ComplexNumberContent } from "./complexNumber";
 
 
 
 export default function Page() {
   return (
     <div className="container-md overflow-hidden">
-     <ComplexNumbersContent/>
+     <ComplexNumberContent/>
     </div>
   );
 }

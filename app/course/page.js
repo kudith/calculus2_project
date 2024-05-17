@@ -5,6 +5,9 @@ import Image from "next/image";
 import determinantImage from "/public/assets/calculus_course/determinant.jpg";
 import seriesArithmeticImage from "/public/assets/calculus_course/series-aritmethic.jpg";
 import complexNumberImage from "/public/assets/calculus_course/complex-numbers.jpg";
+import differentialImage from "/public/assets/calculus_course/differential.jpg";
+import vectorImage from "/public/assets/calculus_course/vector.jpg";
+import doubleIntegralImage from "/public/assets/calculus_course/double-integrals.jpg"; 
 
 const contentList = [
   {
@@ -27,6 +30,27 @@ const contentList = [
     route: "/course/complex-numbers",
     description: "Pahami sifat-sifat unik dari bilangan kompleks dan operasi-operasinya.",
     image: complexNumberImage,
+  },
+  {
+    id: "differential",
+    title: "Diferensial",
+    route: "/course/differential",
+    description: "Jelajahi konsep diferensial dan penggunaannya dalam kalkulus.",
+    image: differentialImage,
+  },
+  {
+    id: "vector",
+    title: "Vektor",
+    route: "/course/vector",
+    description: "Pelajari dasar-dasar vektor dan aplikasinya dalam berbagai bidang.",
+    image: vectorImage,
+  },
+  {
+    id: "double-integral",
+    title: "Integral Lipat Dua",
+    route: "/course/double-integral",
+    description: "Eksplorasi konsep integral lipat dua dan penerapannya.",
+    image: doubleIntegralImage,
   },
 ];
 

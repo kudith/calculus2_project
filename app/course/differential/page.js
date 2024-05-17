@@ -1,13 +1,11 @@
 "use client";
 
-import { ArithmeticGeometricSequenceContent } from "./seriesAritmethic";
-
-
+import { DifferentialContent } from "./differential";
 
 export default function Page() {
   return (
     <div className="container-md overflow-hidden">
-     <ArithmeticGeometricSequenceContent/>
+     <DifferentialContent/>
     </div>
   );
 }

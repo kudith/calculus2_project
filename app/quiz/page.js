@@ -20,7 +20,7 @@ export default function Home() {
             flexDirection="column"
             alignItems="center"
             justifyContent="center"
-            bgGradient="linear(to-r, #4F3BA9, #70a5ff)" 
+            bgGradient="linear(to-r, #8BBAF8, #70a5ff)" 
             py={20}
             mb={8}
             rounded="xl"
