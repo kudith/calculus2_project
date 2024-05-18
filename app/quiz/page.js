@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import { ArrowRightIcon, ArrowDownIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <ChakraProvider>
-      <Box className="container-md min-h-screen mx-auto md:p-6 p-4">
+      <Box className="container-md min-h-screen mx-auto md:p-6 p-8">
         {/* Bagian Hero */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.5 }}
@@ -52,10 +52,29 @@ export default function Home() {
                 Uji pengetahuan Kamu dan tantang diri Kamu sendiri dengan kuis kami!
               </Text>
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.1 }}
+            >
+              <motion.div
+                className="flex justify-center mt-6"
+                animate={{
+                  y: [0, 10, 0],
+                }}
+                transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              >
+                <ArrowDownIcon className="h-8 w-8 text-white" />
+              </motion.div>
+            </motion.div>
           </Flex>
         </motion.div>
         {/* Bagian Kuis */}
-        <Flex direction="row" flexWrap="wrap" gap={6} justifyContent="center">
+        <Flex direction="row" flexWrap="wrap" gap={6} justifyContent="center" pt={'10'}>
           {[
             { href: "/quiz/quiz-determinan", title: "Quiz Determinan", description: "Uji pengetahuan Kamu tentang determinan!" },
             { href: "/quiz/quiz-deret", title: "Quiz Barisan & Deret", description: "Tantang diri Kamu dengan barisan dan deret!" },
