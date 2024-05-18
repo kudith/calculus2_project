@@ -6,14 +6,14 @@ import { LazyMotion, domAnimation, m } from "framer-motion";
 import { initial, animate, exit, transition } from "utils/motions";
 import { SITE_ROUTES } from "../constants";
 import { useScrollTo } from "hooks";
-import LogoSVG from "../public/assets/svg/x-square.svg";  // Adjust the import path accordingly
+import LogoSVG from "../public/assets/svg/x-square.svg";  
 
 export function Logo() {
   const pathname = usePathname();
   const introRef = useRef(null);
 
   useEffect(() => {
-    // cek kondisi link
+    // Check if the current path is home
     if (pathname === SITE_ROUTES.home || pathname === "/") {
       const introElement = introRef.current;
       if (introElement) {
@@ -28,10 +28,14 @@ export function Logo() {
       introElement.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   const { scrollToEl } = useScrollTo();
 
   const onClick = (e) => {
-    scrollToEl(e);
+    if (pathname === SITE_ROUTES.home || pathname === "/") {
+      e.preventDefault();
+      handleScrollToIntro();
+    }
   };
 
   return (
@@ -43,30 +47,17 @@ export function Logo() {
         exit={exit}
         transition={transition}
       >
-        {pathname === SITE_ROUTES.course ? (
-          <Link
-            href={SITE_ROUTES.home}
-            aria-label="Go to home page"
-            role="link"
-            className="flex items-center"
-          >
-            <LogoSVG className="max-w-full mt-1 h-fit mr-1" />
-            <span>detrix</span>
-            <mark>Calc</mark>
-          </Link>
-        ) : (
-          <Link
-            href="#intro"
-            onClick={onClick}
-            aria-label="Scroll to top"
-            role="link"
-            className="flex items-center"
-          >
-            <LogoSVG className="max-w-full h-full mt-1 mr-1" />
-            <span>detrix</span>
-            <mark>Calc</mark>
-          </Link>
-        )}
+        <Link
+          href={SITE_ROUTES.home}
+          onClick={onClick}
+          aria-label="Go to home page"
+          role="link"
+          className="flex items-center"
+        >
+          <LogoSVG className="max-w-full mt-1 h-fit mr-1" />
+          <span>detrix</span>
+          <mark>Calc</mark>
+        </Link>
       </m.h3>
     </LazyMotion>
   );
