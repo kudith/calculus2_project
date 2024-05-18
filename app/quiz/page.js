@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <ChakraProvider>
-      <Box className="container-md min-h-screen mx-auto p-6">
+      <Box className="container-md min-h-screen mx-auto md:p-6 p-4">
         {/* Bagian Hero */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.5 }}
@@ -48,7 +48,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 }}
             >
-              <Text fontSize="lg" color="white">
+              <Text color="white" p={4} fontSize={{ base: '14px', md: '18px', lg: '24px' }}>
                 Uji pengetahuan Kamu dan tantang diri Kamu sendiri dengan kuis kami!
               </Text>
             </motion.div>

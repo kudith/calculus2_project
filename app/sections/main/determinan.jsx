@@ -104,7 +104,7 @@ export function DeterminantCalculator() {
             id="matrix-size"
             value={matrixSize}
             onChange={handleSizeChange}
-            className="p-2 text-center border rounded-lg w-48"
+            className="p-2 text-center dark:text-brand-light border rounded-lg w-48"
           >
             <option value={2}>2x2</option>
             <option value={3}>3x3</option>
