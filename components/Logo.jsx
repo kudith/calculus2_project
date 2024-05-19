@@ -13,7 +13,7 @@ export function Logo() {
   const introRef = useRef(null);
 
   useEffect(() => {
-    // Check if the current path is home
+    
     if (pathname === SITE_ROUTES.home || pathname === "/") {
       const introElement = introRef.current;
       if (introElement) {

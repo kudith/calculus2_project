@@ -29,7 +29,7 @@ export function MobileMenu() {
     <LazyMotion features={domAnimation}>
       <div className="flex justify-end p-2">
         {" "}
-        {/* Pembungkus div untuk menyelaraskan tombol ke kanan */}
+        {/*  */}
         <m.button
           onClick={onOpen}
           title="Open menu"

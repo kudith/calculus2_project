@@ -18,7 +18,7 @@ export function AppHeader() {
         <div className="flex justify-between items-center gap-3">
           <Logo />
           {isMobile ? (
-            // Mobile: gunakan MobileMenu
+            // Mobile: 
             <div className="flex items-center justify-end gap-5">
               {" "}
               {/* Kontainer untuk MobileMenu */}
@@ -26,7 +26,7 @@ export function AppHeader() {
               <MobileMenu />
             </div>
           ) : (
-            // Desktop: gunakan Menu
+            // Desktop: 
             <>
               <Menu />
               <div className="flex items-center gap-5">

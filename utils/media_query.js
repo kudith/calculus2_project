@@ -12,7 +12,7 @@ export const useMediaQuery = (matchMediaQuery = "max-width: 767px") => {
 		const media = window.matchMedia(`(${matchMediaQuery})`);
 		media.addEventListener("change", updateTarget);
 
-		// Check on mount (callback is not called until a change occurs)
+		
 		if (media.matches) setTargetReached(true);
 
 		return () => media.removeEventListener("change", updateTarget);

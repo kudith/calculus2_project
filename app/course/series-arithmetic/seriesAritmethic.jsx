@@ -20,7 +20,7 @@ export function ArithmeticGeometricSequenceContent() {
           Barisan dan Deret
         </motion.h1>
 
-        {/* Section for Arithmetic Sequence */}
+        {/* Section Arithmetic Sequence */}
         <motion.section
           className="mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export function ArithmeticGeometricSequenceContent() {
           </pre>
         </motion.section>
 
-        {/* Section for Geometric Sequence */}
+        {/* Section Geometric Sequence */}
         <motion.section
           className="mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ export function ArithmeticGeometricSequenceContent() {
           </pre>
         </motion.section>
 
-        {/* Section for Geometric Series */}
+        {/* Section Geometric Series */}
         <motion.section
           className="mb-8"
           initial={{ opacity: 0, y: 20 }}

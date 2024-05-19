@@ -11,7 +11,7 @@ export function AppFooter() {
   const isInView = useInView(footerRef, { once: true });
   const year = new Date().getFullYear();
 
-  // Konfigurasi animasi
+  
   const transition = {
     opacity: isInView ? 1 : 0,
     transform: isInView ? "none" : "translateY(30px)",

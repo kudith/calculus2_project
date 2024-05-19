@@ -51,7 +51,7 @@ export function WelcomeSection() {
         className="section flex flex-col items-center justify-center  md:min-h-screen py-40 md:py-10"
         ref={introRef}
       >
-        {/* Judul dengan efek animasi */}
+        {/* Judul */}
         <motion.h1
           className="text-3xl md:text-5xl xl:text-6xl font-bold text-center max-w-6xl"
           {...textAnimations}

@@ -30,7 +30,7 @@ export function AboutSection() {
         >
           <HeadingDividerWithAnimation controls={dividerControls} />
         </motion.div>
-        {/* Wrapper div dengan kelas responsif */}
+        {/* Wrapper div  */}
         <div className="pt-10 pb-16 max-w-7xl flex flex-col-reverse md:flex-row gap-10 items-center">
           {/* Bagian kiri untuk teks */}
           <motion.div
@@ -111,12 +111,12 @@ function HeadingDividerWithAnimation({ controls }) {
           x: 0,
           transition: {
             opacity: { duration: 0.5, ease: "easeOut" },
-            x: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, // Mengatur pergerakan dari bawah ke atas
+            x: { duration: 1, ease: [0.17, 0.55, 0.55, 1] }, 
           },
         },
         hidden: {
           opacity: 0,
-          x: -50, // Posisi awal dari bawah
+          x: -50, 
         },
       }}
     >

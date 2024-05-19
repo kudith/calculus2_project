@@ -20,7 +20,7 @@ export function DoubleIntegralContent() {
           Integral Lipat Dua
         </motion.h1>
 
-        {/* Section for Double Integral */}
+        {/* Section Double Integral */}
         <motion.section
           className="mb-8"
           initial={{ opacity: 0, y: 20 }}
