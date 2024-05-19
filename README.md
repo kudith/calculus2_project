@@ -77,6 +77,7 @@ Provides comprehensive materials covering six key topics:
   - [x] Vectors Quiz (5 questions)
   - [x] Differential Equations Quiz (5 questions)
   - [x] Double Integrals Quiz (5 questions)
+  - [x] Implement Light Mode and Dark Mode
 
 ## How to Use in localhost
 

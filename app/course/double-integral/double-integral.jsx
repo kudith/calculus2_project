@@ -6,7 +6,7 @@ export function DoubleIntegralContent() {
   return (
     <LazyMotion features={domAnimation}>
       <motion.div
-        className="md:mx-auto md:p-8 rounded-md shadow-md"
+        className="md:mx-auto md:p-8 p-4 rounded-md shadow-md"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
